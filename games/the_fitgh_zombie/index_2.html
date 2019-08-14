@@ -1,0 +1,120 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Super tenis</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #444444;
+            font-size: 300px;
+        }
+        canvas {
+            border: 3px solid #FFF
+        }
+    </style>
+</head>
+<body>
+    <canvas></canvas>
+     <script>
+        const canvas = document.querySelector('canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width  = 777;
+        canvas.height = 777;
+
+        const cw = canvas.width;
+        const ch = canvas.height;
+
+        let ludzikX = 0;
+        let ludzikY = 0;
+
+
+        function table() {
+            ctx.fillStyle = '#006315' ;
+            ctx.fillRect(0,0, cw, ch);
+        }
+
+        function random() {
+            return Math.floor(Math.random() * 10);
+        }
+
+        function ludzik() {
+            ludzikX = random();
+            ludzikY = random();
+            console.log('ludzik: '  + ludzikX + ' ' + ludzikY);
+            var imgLuzdik = new Image();
+            imgLuzdik.onload = function () {
+                ctx.drawImage(imgLuzdik, 15 + (ludzikX * 78), 15 + (ludzikY * 78));
+            }
+            imgLuzdik.src = 'img/ludzik_1.png';
+        }
+
+        function zombi() {
+            if (ludzikX < 5) {
+                zombiX = ludzikX + 5;
+            } else {
+                zombiX = ludzikX - 5;
+            }
+
+            if (ludzikY < 5) {
+                zombiY = ludzikY + 5;
+            } else {
+                zombiY = ludzikY - 5;
+            }
+
+            var imgZombi = new Image();
+            imgZombi.onload = function () {
+                ctx.drawImage(imgZombi, 15 + (zombiX * 78), 15 + (zombiY * 78));
+            }
+            imgZombi.src = 'img/zombie.png';
+        }
+
+        function bomba() {
+            if (ludzikX < 7) {
+                xPosition = ludzikX + 3;
+            } else {
+                xPosition = ludzikX - 3;
+            }
+
+            if (ludzikY < 7) {
+                yPosition = ludzikY + 3;
+            } else {
+                yPosition = ludzikY - 3;
+            }
+            console.log(xPosition + ' ' + yPosition);
+            var imgBomba = new Image();
+            imgBomba.onload = function () {
+                ctx.drawImage(imgBomba, 25 + (xPosition * 78), 25 + (yPosition * 78));
+            }
+            imgBomba.src = 'img/bomba.png';
+        }
+
+         function game() {
+            table()
+            
+            for (let lineposition = 75; lineposition < ch; lineposition +=78 ){
+                ctx.fillStyle = '#FFF'
+                ctx.fillRect(lineposition, 0, 3, canvas.height)
+                ctx.fillRect(0, lineposition, canvas.width, 3)
+            }
+            
+            ludzik()
+            zombi()
+            bomba()
+            
+
+            
+ 
+           
+        }
+            
+         
+        game()
+    </script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta chrset="UTF-8">
+    <title>Paint</title>
+    <style>
+        #circle1 {
+          width: 50px;
+          height: 50px;
+          -webkit-border-radius: 25px;
+          -moz-border-radius: 25px;
+          border-radius: 25px;
+          background: rgb(255, 242, 185);
+          position: relative;
+          margin-bottom: 10px
+        }
+        #circle2 {
+          width: 50px;
+          height: 50px;
+          -webkit-border-radius: 25px;
+          -moz-border-radius: 25px;
+          border-radius: 25px;
+          background: yellow;
+          position: relative;
+          margin-bottom: 10px
+        }
+        #circle3 {
+          width: 50px;
+          height: 50px;
+          -webkit-border-radius: 25px;
+          -moz-border-radius: 25px;
+          border-radius: 25px;
+          background: orange;
+          position: relative;
+          margin-bottom: 10px
+        }
+        #circle4 {
+          width: 50px;
+          height: 50px;
+          -webkit-border-radius: 25px;
+          -moz-border-radius: 25px;
+          border-radius: 25px;
+          background: red;
+          position: relative;
+          margin-bottom: 10px
+        }
+        #circle5 {
+          width: 50px;
+          height: 50px;
+          -webkit-border-radius: 25px;
+          -moz-border-radius: 25px;
+          border-radius: 25px;
+          background: lightblue;
+          position: relative;
+          margin-bottom: 10px
+        }
+        #circle6 {
+          width: 50px;
+          height: 50px;
+          -webkit-border-radius: 25px;
+          -moz-border-radius: 25px;
+          border-radius: 25px;
+          background: blue;
+          position: relative;
+          margin-bottom: 10px
+        }
+        #circle7 {
+          width: 50px;
+          height: 50px;
+          -webkit-border-radius: 25px;
+          -moz-border-radius: 25px;
+          border-radius: 25px;
+          background: lightgreen;
+          position: relative;
+          margin-bottom: 10px
+        }
+        #circle8 {
+          width: 50px;
+          height: 50px;
+          -webkit-border-radius: 25px;
+          -moz-border-radius: 25px;
+          border-radius: 25px;
+          background: green;
+          position: relative;
+          margin-bottom: 10px;
+        }
+        #circle9 {
+          width: 50px;
+          height: 50px;
+          -webkit-border-radius: 25px;
+          -moz-border-radius: 25px;
+          border-radius: 25px;
+          background: brown;
+          position: relative;
+          margin-bottom: 10px;
+        }
+        #circle10 {
+          width: 50px;
+          height: 50px;
+          -webkit-border-radius: 25px;
+          -moz-border-radius: 25px;
+          border-radius: 25px;
+          background: black;
+          position: relative;
+          margin-bottom: 10px;
+        }
+        #square1 {
+          width: 50px;
+          height: 5px;
+          background: rgb(85, 125, 236);
+          position: relative;
+          margin-bottom: 10px;
+        }
+        #square2 {
+          width: 50px;
+          height: 10px;
+          background: rgb(85, 125, 236);;
+          position: relative;
+          margin-bottom: 10px;
+        }
+        #square3 {
+          width: 50px;
+          height: 15px;
+          background: rgb(85, 125, 236);;
+          position: relative;
+          margin-bottom: 10px;
+        }
+        #square4 {
+          width: 50px;
+          height: 30px;
+          background: rgb(85, 125, 236);;
+          position: relative;
+          margin-bottom: 10px;
+        }
+        #square5 {
+          width: 50px;
+          height: 50px;
+          background: rgb(85, 125, 236);;
+          position: relative;
+          margin-bottom: 10px;
+        }
+        #paleta {
+          /* position: relative; */
+          width: 3%;
+          height: 800px;
+          background: gray;
+          border-radius: 0;
+          padding-left: 10px;
+          padding-top: 10px;
+          padding-bottom: 40px;
+          float: left;
+        }
+        
+        #sketch {
+          height: 830px;
+          width: 95%;
+          border: 10px solid gray;
+          float: left;
+        }
+    </style>
+    </head>
+    <body>
+      <div id="paleta">
+        <div id="circle1" onclick="changeColor('rgb(255, 235, 148)');" style="cursor: pointer;"></div>
+        <div id="circle2" onclick="changeColor('yellow');" style="cursor: pointer;"></div>
+        <div id="circle3" onclick="changeColor('orange');" style="cursor: pointer;"></div>
+        <div id="circle4" onclick="changeColor('red');" style="cursor: pointer;"></div>
+        <div id="circle5" onclick="changeColor('lightblue');" style="cursor: pointer;"></div>
+        <div id="circle6" onclick="changeColor('blue');" style="cursor: pointer;"></div>
+        <div id="circle7" onclick="changeColor('lightgreen');" style="cursor: pointer;"></div>
+        <div id="circle8" onclick="changeColor('green');" style="cursor: pointer;"></div>
+        <div id="circle9" onclick="changeColor('brown');" style="cursor: pointer;"></div>
+        <div id="circle10" onclick="changeColor('black');" style="cursor: pointer;"></div>
+        <img src="gumka.png" onclick="changeColor('white');" style="cursor: pointer;" />
+        <div id="square1"  onclick="changeWidth(5);" style="cursor: pointer;"></div>
+        <div id="square2"  onclick="changeWidth(10);" style="cursor: pointer;"></div>
+        <div id="square3"  onclick="changeWidth(15);" style="cursor: pointer;"></div>
+        <div id="square4"  onclick="changeWidth(30);" style="cursor: pointer;"></div>
+        <div id="square5"  onclick="changeWidth(50);" style="cursor: pointer;"></div>
+      </div>
+      <div id="sketch">
+          <canvas id="paint"></canvas>
+      </div>
+    <script>
+        var canvas = document.querySelector('#paint');
+        var ctx = canvas.getContext('2d');
+
+        var sketch = document.querySelector('#sketch');
+        var sketch_style = getComputedStyle(sketch);
+        canvas.width = parseInt(sketch_style.getPropertyValue('width'));
+        canvas.height = parseInt(sketch_style.getPropertyValue('height'));
+
+        var mouse = {x: 0, y: 0};
+        var last_mouse = {x: 0, y: 0};
+
+        /* Mouse Capturing Work */
+        canvas.addEventListener('mousemove', function(e) {
+            last_mouse.x = mouse.x;
+            last_mouse.y = mouse.y;
+
+            mouse.x = e.pageX - this.offsetLeft;
+            mouse.y = e.pageY - this.offsetTop;
+        }, false);
+
+
+        /* Drawing on Paint App */
+        ctx.lineWidth = 5;
+        ctx.lineJoin = 'round';
+        ctx.lineCap = 'round';
+        ctx.strokeStyle = 'black';
+
+        canvas.addEventListener('mousedown', function(e) {
+            canvas.addEventListener('mousemove', onPaint, false);
+        }, false);
+
+        canvas.addEventListener('mouseup', function() {
+            canvas.removeEventListener('mousemove', onPaint, false);
+        }, false);
+
+        var onPaint = function() {
+            ctx.beginPath();
+            ctx.moveTo(last_mouse.x, last_mouse.y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.closePath();
+            ctx.stroke();
+        };
+    
+        function changeColor(color){
+          ctx.strokeStyle = color;
+        }
+        function changeWidth(width){
+          ctx.lineWidth = width;
+        }
+    </script>
+
+    </body>
+    </html>

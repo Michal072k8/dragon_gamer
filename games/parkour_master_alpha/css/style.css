@@ -28,7 +28,6 @@ canvas {
 }
 
 @font-face {
-	font-family: "pixelEmulator";
+	font-family: "PixelEmulator";
 	src: url("../font/Pixel Emulator.otf");
 }
-

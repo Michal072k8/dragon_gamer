@@ -4,8 +4,8 @@ var Wejscie = {
 			Wejscie.zadania.nacisnieto[event.keyCode] = true;
 		};
 		
-		document.onkeyup = function() {			
-			Wejscie.zadania.nacisnieto[event.keyCode]=false;
+		document.onkeyup = function(event) {			
+			Wejscie.zadania.nacisnieto[event.keyCode] = false;
 		}
 	},
 

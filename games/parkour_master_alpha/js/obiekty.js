@@ -124,9 +124,9 @@ var Obiekty = {
 								for( var i = 0; i<dane.obiekty.tabelaPotworow.length; i++) {
 									dane.obiekty.tabelaPotworow[i].x -= wnetrze.pedX;
 								}
-                for( var i = 0; i<dane.obiekty.tabelaMonet.length; i++) {
-									dane.obiekty.tabelaMonet[i].x -= wnetrze.pedX;
-								}
+                // for( var i = 0; i<dane.obiekty.tabelaMonet.length; i++) {
+				// 					dane.obiekty.tabelaMonet[i].x -= wnetrze.pedX;
+				// 				}
 							}
 						} else {
 							if(wnetrze.x > dane.canvas.fgCanvas.width/2 || dane.obiekty.mapa.x >= 0) {

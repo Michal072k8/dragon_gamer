@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang=pl>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>Super tenis</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                background-color: darkgray;
+                font-size: 300px;
+            }
+            canvas {
+                border: 3px solid #fff
+            }
+            input {
+                height: 100px;
+                width: 100px;
+                font-size: 90px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <input type="text" readonly="readonly" id="playerScore" value="0" />
+            <canvas></canvas>
+            <input type="text" readonly="readonly" id="aiScore" value="0" />
+        </div>
+        
+        <script>
+            const canvas = document.querySelector('canvas');
+            const ctx = canvas.getContext('2d');
+        
+            canvas.width = 1000;
+            canvas.height = 500;
+                
+            const cw = canvas.width;
+            const ch = canvas.height;
+            
+            const ballSize = 20; 
+            let ballX = cw / 2 - ballSize / 2
+            let ballY= ch / 2 - ballSize / 2
+            
+            const paddelHeight = 100;
+            const paddelWidth = 20;
+                
+            const playerX = 100;
+            const aiX = 910;
+                
+            let playerY = 200;
+            let aiY = 200;
+                
+            const lineWidth = 6;
+            const lineHeight = 16;
+                
+            let ballspeedX = -5;
+            let ballspeedY = -5;
+            var playerScore = document.getElementById("playerScore");
+            var aiScore = document.getElementById("aiScore");
+                        
+            function score() {
+                // console.log('ble ' + playerScore.value + ' ' + aiScore.value);
+                var gradient=ctx.createLinearGradient(0,0,canvas.width,0);
+                ctx.font="40px Georgia";
+                
+                if (playerScore.value == 25) {
+                    gradient.addColorStop("0","magenta");
+                    gradient.addColorStop("0","blue");
+                    gradient.addColorStop("1.0","green");
+                    ctx.fillStyle=gradient;
+                    ctx.fillText("YOU WON!",400,200); 
+                    clearInterval(intervalId)
+                }
+
+                if (aiScore.value == 25) {
+                    gradient.addColorStop("0","magenta");
+                    gradient.addColorStop("0","blue");
+                    gradient.addColorStop("1.0","red");
+                    ctx.fillStyle=gradient;
+                    ctx.fillText("YOU LOSE!",400,200); 
+                    clearInterval(intervalId)
+                }
+            }
+
+            function player()  {
+                ctx.fillStyle = '#7fff00';
+                ctx.fillRect(playerX, playerY,paddelWidth, paddelHeight);
+                
+            }
+        
+            function ai()  {
+                ctx.fillStyle = 'yellow';
+                ctx.fillRect(aiX, aiY,paddelWidth, paddelHeight);
+            }  
+        
+            function ball()  {
+                ctx.fillStyle = 'white';
+                ctx.fillRect(ballX, ballY, ballSize, ballSize);
+                
+                ballX += ballspeedX;
+                ballY += ballspeedY;
+                
+                if (ballY <= 0 || ballY + ballSize >= ch) {
+                    ballspeedY = - ballspeedY;
+                    speedUp();
+                }
+  
+                if (ballX <= 0 || ballX + ballSize >= cw) {
+                    ballspeedX = - ballspeedX;
+                }
+                
+                if (ballX < playerX && ((ballY < playerY ) || (ballY > playerY + paddelHeight))) {
+                    ballX = 480;
+                    ballY = ch / 2 - ballSize / 2;
+                    ballspeedX = 5;
+                    ballspeedY = 5 * (Math.floor(Math.random() * 2) === 0 ? -1 : 1);
+                    aiScore.value++;
+                    score()
+                }
+                
+                if (ballX < playerX && !((ballY < playerY ) || (ballY > playerY + paddelHeight))) {
+                    ballspeedX = - ballspeedX;
+                }
+                
+                if (ballX > aiX + paddelWidth && ((ballY < aiY ) || (ballY > aiY + paddelHeight))) {
+                    ballX = 480
+                    ballY = ch / 2 - ballSize / 2;
+                    ballspeedX = -5;
+                    ballspeedY = 5 * (Math.floor(Math.random() * 2) === 0 ? -1 : 1);
+                    playerScore.value++
+                    score()
+                }
+                
+                if (ballX > aiX + paddelWidth && !((ballY < aiY ) || (ballY > aiY + paddelHeight))) {
+                    ballspeedX = - ballspeedX;
+                }
+            }
+                
+            
+        
+            function table() {
+                ctx.fillStyle = 'black' ;
+                ctx.fillRect(0,0, cw, ch);
+                
+                for (let lineposition = 20; lineposition < ch; lineposition +=30 ){
+                    ctx.fillStyle = 'gray'
+                    ctx.fillRect(cw / 2 - lineWidth / 2 , lineposition, lineWidth, lineHeight)
+                }
+            }
+                
+            topcanvas = canvas.offsetTop;
+            console.log(topcanvas)
+                
+            
+                
+            function playerposition(e) {
+                playerY = e.clientY - topcanvas - paddelHeight / 2;
+                
+                if (playerY >= ch - paddelHeight) {
+                    playerY = ch - paddelHeight
+                }
+                
+                if (playerY <= 0) {
+                    playerY = 0;
+                }
+            }
+                
+            function speedUp() {
+                // console.log('ballSpeedX' + ', ' + ballspeedY)
+                
+                if (ballspeedX > 0 && ballspeedX < 30) {
+                    ballspeedX += 2;
+                } else if (ballspeedX < 0 && ballspeedX > -30) {
+                    ballspeedX -= 2;
+                }
+
+                if (ballspeedY > 0 && ballspeedY < 20) {
+                    ballspeedY += 1;
+                } else if (ballspeedY < 0 && ballspeedY > -20) {
+                    ballspeedY -= 1;
+                }
+            }
+                
+            function aipositione() {
+                var middlepaddel = aiY + paddelHeight/2;
+                var middleball = ballY + ballSize / 2;
+
+                if (ballX > 500) {
+                    if (middlepaddel - middleball > 200) {
+                        aiY -= 80;
+                        // console.log('>+200');
+                    }
+                    else if (middlepaddel - middleball > 50){
+                        aiY -= 80;
+                        // console.log('+50-200');
+                    }
+                    else if (middlepaddel - middleball < -200){
+                        aiY += 80;
+                        // console.log('<+200');
+                    }
+                    else if (middlepaddel - middleball < -50){
+                        aiY += 80;
+                        
+                        
+                        
+                        // console.log('-50-(-200)');
+                    }
+                } else if(ballX <= 500 && ballX > 150) {
+                    
+                if(middlepaddel - middleball > 100){
+                    aiY -= 3
+                } else if (middlepaddel - middleball < -100){
+                    aiY += 3
+                }
+
+                }
+            }
+                
+            canvas.addEventListener('mousemove',playerposition)
+                
+                
+            function game() {
+                table()
+                ball()
+                player()
+                ai()
+                aipositione()
+            }
+                
+            let intervalId = setInterval(game, 25)
+                    
+        </script>
+    </body>
+
+    </html>

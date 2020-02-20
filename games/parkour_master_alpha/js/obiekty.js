@@ -103,7 +103,7 @@ var Obiekty = {
 							wnetrze.pedY-=23.5;
 
 							dane.audio.skok.pause();
-							dane.audio.skok.surrentTime = 0;
+							dane.audio.skok.currentTime = 0;
 							dane.audio.skok.play();
 						}
 					},

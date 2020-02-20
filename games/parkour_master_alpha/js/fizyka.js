@@ -110,8 +110,10 @@ var Fizyka = {
 			} else if(obiekt.typ === "moneta") {
         var nrMonety = dane.obiekty.tabelaMonet.indexOf(obiekt);
         dane.obiekty.tabelaMonet.splice(nrMonety, 1);
-        mario.monety++;
-      }
+				mario.monety++;
+				
+				dane.audio.moneta.cloneNode(true).play();
+			}
 		},
 		
 		Kolizja2: function(obiekt, p) {

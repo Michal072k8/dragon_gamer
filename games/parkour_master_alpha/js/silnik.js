@@ -25,9 +25,9 @@ var Silnik = {
 			canvas: canvas,
 			grafika: grafika,
 			audio: {
-				melodia: new Audio("addio/theme_melody.mp3"),
-				skok: new Audio("addio/jump_melody.mp3"),
-				moneta: new Audio("addio/coin_melody.mp3"),
+				melodia: new Audio("../audio/theme_melody.mp3"),
+				skok: new Audio("../audio/jump_melody.mp3"),
+				moneta: new Audio("../audio/coin_melody.mp3"),
 			}
 		};
     
@@ -36,7 +36,7 @@ var Silnik = {
 	dane.canvas.fgCtx.imageSmoothingEnabled = false;
 	
 	dane.audio.melodia.loop = true;
-	seTimeoup (function() {
+	seTimeout (function() {
 		dane.audio.melodia.play();
 	},1000); 
 		

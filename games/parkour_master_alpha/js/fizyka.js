@@ -86,8 +86,8 @@ var Fizyka = {
 					mario.pedY = -20.5;
 
 					dane.audio.skok.pause();
-							dane.audio.skok.surrentTime = 0;
-							dane.audio.skok.play();
+					dane.audio.skok.currentTime = 0;
+					dane.audio.skok.play();
 				}
 				
 				if(mario.x<p.x && mario.y>= p.y) {

@@ -49,7 +49,11 @@ class Silnik {
             this.dane.kontroler.animacje.aktualizacja(this.dane);
             this.dane.kontroler.fizyka.aktualizacja(this.dane);
             this.dane.kontroler.render.aktualizacja(this.dane);
+
+            this.dane.nrKlatki++;
+            requestAnimation(petla);
         }
+        petla();
     }
-    
 }
+window.onload = new Silnik();

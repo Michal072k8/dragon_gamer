@@ -56,7 +56,7 @@ class Mario {
             poruszanie: {
                 ruch: (dane) => {
                     if(this.kierunek==="prawo") {
-                        if(this.x < dane.canvas.fgCanvas.width/2 || dane.obiekty.mapa.x <= dane.canvas.fgCanvas.width-dane.obiekty.mapa.w) {
+                        if(this.x < dane.canvas.fgCtx.canvas.width/2 || dane.obiekty.mapa.x <= dane.canvas.fgCtx.canvas.width-dane.obiekty.mapa.w) {
                             this.x += this.pedX;
                         } else {
                             dane.obiekty.mapa.x -= this.pedX;
@@ -71,7 +71,7 @@ class Mario {
                             }
                         }
                     } else {
-                        if(this.x > dane.canvas.fgCanvas.width/2 || dane.obiekty.mapa.x >= 0) {
+                        if(this.x > dane.canvas.fgCtx.canvas.width/2 || dane.obiekty.mapa.x >= 0) {
                             this.x -= this.pedX;
                         } else {
                             dane.obiekty.mapa.x += this.pedX;
@@ -129,6 +129,7 @@ class Mario {
         this.pedX = 8;
         this.zycia = 3;
         this.momentSmierci = false;
-  this.monety = 0;      
+        this.monety = 0;      
+        this.typ = "mario";
     }
 }

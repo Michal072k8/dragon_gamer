@@ -1,5 +1,5 @@
 class Sciana {
-    construktor(x, y, w, h) {
+    constructor(x, y, w, h) {
         	this.img = img;
 			this.x =x;
 			this.y = y;

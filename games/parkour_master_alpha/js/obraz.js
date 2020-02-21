@@ -1,5 +1,5 @@
 class Obraz {
-    construktor(img, x, y, w, h) {
+    constructor(img, x, y, w, h) {
         	this.img = img;
 			this.x =x;
 			this.y = y;

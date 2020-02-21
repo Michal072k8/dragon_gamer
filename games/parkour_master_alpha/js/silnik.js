@@ -1,77 +1,64 @@
-var Silnik = {
-	ini: function() {
-		var skyCanvas = document.getElementById("sky-canvas");
+class Silnik {
+    constructor() {
+
+        var skyCanvas = document.getElementById("sky-canvas");
 		var bgCanvas = document.getElementById("bg-canvas");
-		var fgCanvas = document.getElementById("fg-canvas");
-		
-		var canvas = {
-			skyCanvas: skyCanvas,
-			bgCanvas: bgCanvas,
-			fgCanvas: fgCanvas,
-			skyCtx: skyCanvas.getContext("2d"),
+        var fgCanvas = document.getElementById("fg-canvas");
+        
+        let canvas = {
+            skyCtx: skyCanvas.getContext("2d"),
 			bgCtx: bgCanvas.getContext("2d"),
 			fgCtx: fgCanvas.getContext("2d"),
-		};
-		
-		var grafika = new Image();
-		grafika.src = "img/stylesheet.png";
+        }
+        
+        let grafika = new Image(); 
+        grafika.src = "img/stylesheet.png";
 		  
 		grafika.addEventListener("load", function() {
 			var grafika = this;
-		});
-		
-		var dane = {
-			nrKlatki: 0,
+        });
+        
+        this.dane = {
+            nrKlatki: 0,
 			canvas: canvas, 
 			grafika: grafika,
 			audio: {
 				melodia: new Audio("audio/theme_melody.mp3"),
 				skok: new Audio("audio/jump_melody.mp3"),
 				moneta: new Audio("audio/coin_melody.mp3"),
-			}
-		};
-    
-    dane.canvas.skyCtx.imageSmoothingEnabled = false;
-    dane.canvas.bgCtx.imageSmoothingEnabled = false;
-		dane.canvas.fgCtx.imageSmoothingEnabled = false;
-	
-		dane.audio.melodia.loop = true;
-		setTimeout(function() {
-			dane.audio.melodia.play();
-		},1000); 
-		
-		Wejscie.ini(dane);
-		Obiekty.ini(dane);
-		Silnik.start(dane);
-	},
-	
-	start: function(dane) {
-		var petla = function() {
-			Silnik.wejscie(dane);
-			Silnik.aktualizacje(dane);
-			Silnik.render(dane);
-			
-			dane.nrKlatki++;
-			
-			window.requestAnimationFrame(petla);
-		};
-		
-		petla();
-	},
-	
-	wejscie: function(dane) {
-		Wejscie.aktualizacja(dane);
-	},
-	
-	aktualizacje: function(dane) {
-		Poruszanie.aktualizacja(dane);
-		Animacje.aktualizacja(dane);
-		Fizyka.aktualizacja(dane);
-	},
-	
-	render: function(dane) {
-		Render.aktualizacja(dane);
-	}
-};
+            },
+            kontroler: {}
+        }
 
-window.onload = Silnik.ini();
+        this.dane.kontroler = {
+            wejscie: new Wejscie(),
+            obiekty: new Obiekty(this.dane),
+            animacje: new Animacje(),
+            fizyka: new Fizyka(),
+            render: new Rewnder(),
+            poruszanie: new Poruszanie(),
+            smierc: new Smierc(), 
+        }
+
+        this.dane.canvas.skyCtx.imageSmoothingEnabled = false;
+        this.dane.canvas.bgCtx.imageSmoothingEnabled = false;
+        this.dane.canvas.fgCtx.imageSmoothingEnabled = false;
+        
+        this.start();
+    }
+
+    start() {
+        let petla = () => {
+            this.dane.kontroler.wejscie.aktualizacja(this.dane);
+            this.dane.kontroler.poruszanie.aktualizacja(this.dane);
+            this.dane.kontroler.animacje.aktualizacja(this.dane);
+            this.dane.kontroler.fizyka.aktualizacja(this.dane);
+            this.dane.kontroler.render.aktualizacja(this.dane);
+
+            this.dane.nrKlatki++;
+            requestAnimation(petla);
+        }
+        petla();
+    }
+}
+window.onload = new Silnik();

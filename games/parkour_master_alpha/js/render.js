@@ -1,24 +1,24 @@
-class REnder {
+class Render {
     aktualizacja(dane) {
-        Render.zadania.Rysuj(dane.obiekty.niebo, dane.canvas.skyCtx);
+        this.rysuj(dane.obiekty.niebo, dane.canvas.skyCtx);
 		
 		dane.canvas.bgCtx.clearRect(0,0, dane.canvas.bgCtx.canvas.width, dane.canvas.bgCtx.canvas.height);
-	this.Rysuj(dane.obiekty.mapa, dane.canvas.bgCtx);
+	this.rysuj(dane.obiekty.mapa, dane.canvas.bgCtx);
 		
 		dane.canvas.fgCtx.clearRect(0,0, dane.canvas.fgCtx.canvas.width, dane.canvas.fgCtx.canvas.height);
-	this.Rysuj(dane.obiekty.mario, dane.canvas.fgCtx);
+	this.rysuj(dane.obiekty.mario, dane.canvas.fgCtx);
 		
-	this.Pisz("Lives: " + dane.obiekty.mario.zycia, dane.canvas.fgCtx, 16, 32, "16px", "PixelEmulator");
-	this.Pisz("Score: " + dane.obiekty.mario.monety, dane.canvas.fgCtx, 772, 32, "16px", "PixelEmulator");
+	this.pisz("Lives: " + dane.obiekty.mario.zycia, dane.canvas.fgCtx, 16, 32, "16px", "PixelEmulator");
+	this.pisz("Score: " + dane.obiekty.mario.monety, dane.canvas.fgCtx, 772, 32, "16px", "PixelEmulator");
 		
-		if(dane.obiekty.mario.zycia<1) Render.zadania.Pisz("Game Over", dane.canvas.fgCtx, 200, 300, "72px", "PixelEmulator");
+		if(dane.obiekty.mario.zycia<1) this.pisz("Game Over", dane.canvas.fgCtx, 200, 300, "72px", "PixelEmulator");
 		
 		dane.obiekty.tabelaPotworow.forEach((p) => {
-		this.Rysuj(p, dane.canvas.fgCtx);
+		this.rysuj(p, dane.canvas.fgCtx);
 		});
     
     dane.obiekty.tabelaMonet.forEach((m) => {
-		this.Rysuj(m, dane.canvas.fgCtx);
+		this.rysuj(m, dane.canvas.fgCtx);
 		});
     }
 

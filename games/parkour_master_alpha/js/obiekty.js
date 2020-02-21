@@ -38,7 +38,7 @@ class Obiekty {
     dane.obiekty.tabelaMonet = [];
 		
 		sciany.forEach(function(z) {
-			dane.obiekty.tabelaScian.push(new Sciana(z[0],z[1],z[2],z[3]));
+			dane.obiekty.tabelaScian.push(new Sciana(dane.grafika, z[0],z[1],z[2],z[3]));
 		});
 		
 		potwory.forEach(function(p) {

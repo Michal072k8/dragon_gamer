@@ -1,5 +1,5 @@
 class Potwor {
-    construktor(img, x, y, w, h) {
+    constructor(img, x, y, w, h) {
 			this.obraz = new Obraz(img, 960, 240, 16, 16);
 			this.animacja = {
 				poruszanie: {

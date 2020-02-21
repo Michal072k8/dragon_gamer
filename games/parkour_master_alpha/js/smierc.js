@@ -1,5 +1,5 @@
 class Smierc {
-    StrataZycia(dane) {
+    strataZycia(dane) {
         let mario = dane.obiekty.mario;
         
         if(mario.zycia>0) {

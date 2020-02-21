@@ -1,7 +1,7 @@
 class Poruszanie {
     aktualizacja(dane) {
-		this.Mario(dane);
-		this.Potwor(dane);
+		this.mario(dane);
+		this.potwor(dane);
 	}
 	mario(dane) {
     dane.obiekty.mario.obecnyStan.ruch(dane);

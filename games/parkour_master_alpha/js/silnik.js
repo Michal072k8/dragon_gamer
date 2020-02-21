@@ -35,7 +35,7 @@ class Silnik {
             obiekty: new Obiekty(this.dane),
             animacje: new Animacje(),
             fizyka: new Fizyka(),
-            render: new Rewnder(),
+            render: new Render(),
             poruszanie: new Poruszanie(),
             smierc: new Smierc(), 
         }
@@ -56,7 +56,7 @@ class Silnik {
             this.dane.kontroler.render.aktualizacja(this.dane);
 
             this.dane.nrKlatki++;
-            requestAnimation(petla);
+            requestAnimationFrame(petla);
         }
         petla();
     }

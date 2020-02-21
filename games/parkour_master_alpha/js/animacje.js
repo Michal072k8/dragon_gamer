@@ -23,4 +23,10 @@ class Animacje {
             p.obecnyStan.animacja(dane);
         });
     }
+
+    moneta(dane) {
+        dane.obiekty.tabelaMonet.forEach(function(m) {
+                  m.obecnyStan.animacja(dane);
+              });
+    }
 }

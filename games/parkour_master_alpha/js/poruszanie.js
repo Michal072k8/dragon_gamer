@@ -8,7 +8,7 @@ class Poruszanie {
     }
     
     potwor(dane) {
-        dane.obiekty.tabelaPotworow.forEach(function(p) {
+        dane.obiekty.tabelaPotworow.forEach((p) => {
             p.obecnyStan.ruch(dane);
         });
     }

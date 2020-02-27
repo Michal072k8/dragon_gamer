@@ -23,6 +23,17 @@ class Fizyka {
       }
     }
 
+    wykrywanieKolizji(dane) {
+      let wykrywanieKolizji = (obiekt1, obiekt2) => {
+				if(obiekt1.x < obiekt2.x + obiekt2.w &&
+				    obiekt1.x + obiekt1.w > obiekt2.x &&
+				    obiekt1.y < obiekt2.y + obiekt2.h &&
+				    obiekt1.y + obiekt1.h > obiekt2.y) {
+            this.Kolizja(obiekt1, obiekt2, dane);
+            }
+				}
+    }
+
     stronaKolizji(obiekt1, obiekt2) {
       let maksymalnaOdlegloscX = (obiekt1.w + obiekt2.w)/2,
         maksymalnaOdlegloscY = (obiekt1.h + obiekt2.h)/2;
@@ -45,6 +56,11 @@ class Fizyka {
           if(KatObiektow > -KatPrawyGorny && KatObiektow < -katLewyGorny) {
             stronaKolizji[2] = true;
           }
+          if(KatObiektow > -katLewyGorny && KatObiektow < katLewyGorny) {
+            stronaKolizji[3] = true;
+      }
+
+      return stronaKolizji;
     }
   }
   

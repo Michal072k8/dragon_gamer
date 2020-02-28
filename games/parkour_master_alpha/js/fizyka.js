@@ -41,7 +41,7 @@ class Fizyka {
           dane.obiekty.tabelaMonet.forEach((moneta) => {
             wykrywanieKolizji(mario, moneta);
           }); 
-
+        }
           
           dane.obiekty.tabelaPotworow.forEach((potwor) => {
            if(mario/momentSmierci) wykrywanieKolizji(mario, potwor);
@@ -51,8 +51,8 @@ class Fizyka {
             });
           });
         }
-
-        Kolizja(obiekt1, obiekt2, dane) {
+      
+      Kolizja(obiekt1, obiekt2, dane) {
           let stronaKolizji = this.stronaKolizji(obiekt1, obiekt2);
           if(obiekt1.typ === "mario") {
             let mario = obiekt1;
@@ -62,8 +62,8 @@ class Fizyka {
               }
             }
           }
-        } 
-    }
+        }
+
 
     stronaKolizji(obiekt1, obiekt2) {
       let maksymalnaOdlegloscX = (obiekt1.w + obiekt2.w)/2,

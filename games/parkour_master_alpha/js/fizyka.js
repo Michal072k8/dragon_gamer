@@ -31,7 +31,38 @@ class Fizyka {
 				    obiekt1.y + obiekt1.h > obiekt2.y) {
             this.Kolizja(obiekt1, obiekt2, dane);
             }
-				}
+        };
+        let mario = dane.obiekty.mario;
+        if(!mario.momentSmierci) {
+          dane.obiekty.tabelaScian.forEach((sciana) => {
+            wykrywanieKolizji(mario, sciana);
+          });
+          
+          dane.obiekty.tabelaMonet.forEach((moneta) => {
+            wykrywanieKolizji(mario, moneta);
+          }); 
+
+          
+          dane.obiekty.tabelaPotworow.forEach((potwor) => {
+           if(mario/momentSmierci) wykrywanieKolizji(mario, potwor);
+
+            dane.obiekty.tabelaScian.forEach((sciana) => {
+              wykrywanieKolizji(potwor, sciana);
+            });
+          });
+        }
+
+        Kolizja(obiekt1, obiekt2, dane) {
+          let stronaKolizji = this.stronaKolizji(obiekt1, obiekt2);
+          if(obiekt1.typ === "mario") {
+            let mario = obiekt1;
+            if(obiekt2.typ === "sciana") {
+              if(stronaKolizji[0]) {
+                mario.obecnyStan = mario.stan.poruszanie;
+              }
+            }
+          }
+        } 
     }
 
     stronaKolizji(obiekt1, obiekt2) {

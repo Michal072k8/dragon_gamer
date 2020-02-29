@@ -58,7 +58,21 @@ class Fizyka {
             let mario = obiekt1;
             if(obiekt2.typ === "sciana") {
               if(stronaKolizji[0]) {
-                mario.obecnyStan = mario.stan.poruszanie;
+                mario.obecnyStan = mario.stan.porszanie;
+                mario.y = obiekt2.y - mario.h;
+                mario.pedY = 0;
+              }
+              if(stronaKolizji[2]) {
+                mario.y = obiekt2.y + obiekt2.h - 1;
+                if(mario.pedY < 0) mario.pedY = 1;
+              }
+              if(stronaKolizji[3]) {
+                mario.x = obiekt2.x - mario.w;
+                mario.pedX = 0;
+              }
+              if(stronaKolizji[1]) {
+                mario.x = obiekt2.x + obiekt2.w;
+                mario.pedX = 0;
               }
             }
           }

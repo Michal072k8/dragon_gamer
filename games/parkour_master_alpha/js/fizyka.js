@@ -1,13 +1,13 @@
 class Fizyka {
     aktualizacja(dane) {
       this.grawitacja(dane.obiekty.mario);
-          //this.wykrywanieKolizji(dane);
-          this.smierc(dane);
   
           dane.obiekty.tabelaPotworow.forEach((p) => {
               this.grawitacja(p);
-              //this.wykrywanieKolizji2(dane, p);
           });
+
+          this.wykrywanieKolizji(dane);
+          this.smierc(dane);
     }
   
     grawitacja(obiekt) {
@@ -90,7 +90,26 @@ class Fizyka {
                 }, 750);
               }
             } else if(obiekt2.typ === "moneta") {
-              
+              let nrMonety = dane.obiekty.tabelaMonet.indexOf(obiekt2);
+              dane.obiekty.tabelaMonet.splice(nrMonety, 1);
+              mario.monety++;
+            }
+          } else if(obiekt1.typ === "potwor") {
+            let potwor = obiekt1;
+            if(obiekt2.typ === "sciana") {
+              if(stronaKolizji[0]) {
+                potwor.obecnyStan = potwor.stan.porszanie;
+                potwor.y = obiekt2.y - potwor.h;
+                potwor.pedY = 0;
+              }
+              if(stronaKolizji[3]) {
+                potwor.x = obiekt2.x - potwor.w;
+                potwor.pedX = -2;
+              }
+              if(stronaKolizji[1]) {
+                potwor.x = obiekt2.x + obiekt2.w;
+                potwor.pedX = 2;
+              }
             }
           }
         }

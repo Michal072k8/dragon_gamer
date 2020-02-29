@@ -74,6 +74,23 @@ class Fizyka {
                 mario.x = obiekt2.x + obiekt2.w;
                 mario.pedX = 0;
               }
+            } else if(obiekt2.typ === "potwor") {
+              if(stronaKolizji[0]) {
+                let nrPotwora = dane.obiekty.tabelaPotworow.indexOf(obiekt2);
+                dane.obiekty.tabelaPotworow.splice(nrPotwora, 1);
+                mario.obecnyStan = mario.stan.skakanie;
+                mario.pedY = -20.5;
+              }
+              if(stronaKolizji[1] || stronaKolizji[2] || stronaKolizji[3]) {
+                mario.obecnyStan = mario.stan.smierc;
+                mario.pedY = -20.5;
+                mario.momentSmierci = true;
+                setTimeout(() => {
+                  dane.kontroler.smierc.strataZycia(dane);
+                }, 750);
+              }
+            } else if(obiekt2.typ === "moneta") {
+              
             }
           }
         }

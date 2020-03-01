@@ -44,7 +44,7 @@ class Fizyka {
         }
           
           dane.obiekty.tabelaPotworow.forEach((potwor) => {
-           if(mario/momentSmierci) wykrywanieKolizji(mario, potwor);
+           if(mario.momentSmierci) wykrywanieKolizji(mario, potwor);
 
             dane.obiekty.tabelaScian.forEach((sciana) => {
               wykrywanieKolizji(potwor, sciana);

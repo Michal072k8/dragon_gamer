@@ -54,24 +54,26 @@ class Mario {
             poruszanie: {
                 ruch: (dane) => {
                         this.kontrolerRuchu(dane);
-                animacja: (dane) => {
-                    if(this.kierunek === "prawo") {
-                        if(dane.nrKlatki % 5 == 0) {
-                            this.obraz = this.animacja.poruszaniePrawo.klatka[this.animacja.poruszaniePrawo.obecnaKlatka];
-                            this.animacja.poruszaniePrawo.obecnaKlatka++;
-                        }
+                        animacja: (dane) => {
+                            if(this.kierunek === "prawo") {
+                                if(dane.nrKlatki % 5 == 0) {
+                                    this.obraz = this.animacja.poruszaniePrawo.klatka[this.animacja.poruszaniePrawo.obecnaKlatka];
+                                    this.animacja.poruszaniePrawo.obecnaKlatka++;
+                                }
                         
-                        if(this.animacja.poruszaniePrawo.obecnaKlatka>3) {
-                            this.animacja.poruszaniePrawo.obecnaKlatka=0;
-                        }
-                    } else {
-                        if(dane.nrKlatki % 5 == 0) {
-                            this.obraz = this.animacja.poruszanieLewo.klatka[this.animacja.poruszanieLewo.obecnaKlatka];
-                            this.animacja.poruszanieLewo.obecnaKlatka++;
-                        }
+                                if(this.animacja.poruszaniePrawo.obecnaKlatka>3) {
+                                    this.animacja.poruszaniePrawo.obecnaKlatka=0;
+                                }
                         
-                        if(this.animacja.poruszanieLewo.obecnaKlatka>3) {
-                            this.animacja.poruszanieLewo.obecnaKlatka=0;
+                        } else {
+                            if(dane.nrKlatki % 5 == 0) {
+                                this.obraz = this.animacja.poruszanieLewo.klatka[this.animacja.poruszanieLewo.obecnaKlatka];
+                                this.animacja.poruszanieLewo.obecnaKlatka++;
+                            }
+                            
+                            if(this.animacja.poruszanieLewo.obecnaKlatka>3) {
+                                this.animacja.poruszanieLewo.obecnaKlatka=0;
+                            }
                         }
                     }
                 }

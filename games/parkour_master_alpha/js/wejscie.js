@@ -18,25 +18,26 @@ class Wejscie {
 			mario.pedX = 8;
 
 			if(mario.pedY == 0) {
-				mario.obecnyStan = mario.poruszanie;
+				mario.obecnyStan = mario.stan.poruszanie;
 			}else {
-				mario.obecnyStan = mario.poruszanie;
+				mario.obecnyStan = mario.stan.skakanie;
 			}
 			
 		}
-		if(this.nacisnieto(37) && !mario.momentSmierci) {
+	else if(this.nacisnieto(37) && !mario.momentSmierci) {
 			mario.kierunek = "lewo";
 			mario.pedX = -8;
 
 			
 			if(mario.pedY == 0) {
-				mario.obecnyStan = mario.poruszanie;
+				mario.obecnyStan = mario.stan.poruszanie;
 			}else {
-				mario.obecnyStan = mario.poruszanie;
-			}
+				mario.obecnyStan = mario.stan.skakanie;
+			} }else {
+				mario.pedX = 0;
 
 		}
-		if(this.nacisnieto(32)) {
+		if(this.nacisnieto(32) && !mario.momentSmierci) {
 			mario.obecnyStan = mario.stan.skakanie;
 		}
   }

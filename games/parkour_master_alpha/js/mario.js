@@ -102,7 +102,7 @@ class Mario {
     }
 
     kontrolerRuchu(dane) {
-        if(((this.x - this.pedX <= dane.canvas.fgCtx.canvas.width/2 || dane.obiekty.mapa.x - this.pedX < dane.canvas.fgCtx.canvas.width - dane.obiekty.mapa.w) && this.kierunek === "prawo" || ((this.x -this.pedX > dane.canvas.fgCtx.canvas.width/2 || dane.obiekty.obiekty.mapa.x - this.pedX >= 0 ) && this.kierunek === "lewo"))) {
+        if(((this.x - this.pedX <= dane.canvas.fgCtx.canvas.width/2 || dane.obiekty.mapa.x - this.pedX < dane.canvas.fgCtx.canvas.width - dane.obiekty.mapa.w) && this.kierunek === "prawo") || ((this.x -this.pedX > dane.canvas.fgCtx.canvas.width/2 || dane.obiekty.obiekty.mapa.x - this.pedX >= 0 ) && this.kierunek === "lewo")) {
             this.x += this.pedX;
         } else {
             dane.obiekty.mapa.x -= this.pedX;

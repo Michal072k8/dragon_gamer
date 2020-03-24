@@ -29,7 +29,7 @@ class Fizyka {
 				    obiekt1.x + obiekt1.w > obiekt2.x &&
 				    obiekt1.y < obiekt2.y + obiekt2.h &&
 				    obiekt1.y + obiekt1.h > obiekt2.y) {
-            this.Kolizja(obiekt1, obiekt2, dane);
+            this.kolizja(obiekt1, obiekt2, dane);
             }
         };
         let mario = dane.obiekty.mario;
@@ -52,13 +52,13 @@ class Fizyka {
           });
         }
       
-      Kolizja(obiekt1, obiekt2, dane) {
+      kolizja(obiekt1, obiekt2, dane) {
           let stronaKolizji = this.stronaKolizji(obiekt1, obiekt2);
           if(obiekt1.typ === "mario") {
             let mario = obiekt1;
             if(obiekt2.typ === "sciana") {
               if(stronaKolizji[0]) {
-                mario.obecnyStan = mario.stan.porszanie;
+                mario.obecnyStan = mario.stan.stanie;
                 mario.y = obiekt2.y - mario.h;
                 mario.pedY = 0;
               }
@@ -98,7 +98,7 @@ class Fizyka {
             let potwor = obiekt1;
             if(obiekt2.typ === "sciana") {
               if(stronaKolizji[0]) {
-                potwor.obecnyStan = potwor.stan.porszanie;
+                potwor.obecnyStan = potwor.stan.poruszanie;
                 potwor.y = obiekt2.y - potwor.h;
                 potwor.pedY = 0;
               }
@@ -120,24 +120,24 @@ class Fizyka {
         maksymalnaOdlegloscY = (obiekt1.h + obiekt2.h)/2;
 
         let katLewyGorny = Math.atan2(maksymalnaOdlegloscY, maksymalnaOdlegloscX) * 180 / Math.PI,
-          KatPrawyGorny = 180 - katLewyGorny;
+          katPrawyGorny = 180 - katLewyGorny;
 
           let odlegloscX = (obiekt2.x + obiekt2.w/2) - (obiekt1.x + obiekt1.w/2 - obiekt1.pedx),
             odlegloscY = (obiekt2.y + obiekt2.h/2) - (obiekt1.y + obiekt1.h/2 - obiekt1.pedy);
 
-          let KatObiektow = Math.atan2(odlegloscY, odlegloscX) * 180 / Math.PI;
+          let katObiektow = Math.atan2(odlegloscY, odlegloscX) * 180 / Math.PI;
 
           let stronaKolizji = [false, false, false, false];
-          if(KatObiektow > katLewyGorny && KatObiektow < KatPrawyGorny) {
+          if(katObiektow > katLewyGorny && katObiektow < katPrawyGorny) {
             stronaKolizji[0] = true;
           }
-          if(KatObiektow > KatPrawyGorny || KatObiektow < -KatPrawyGorny) {
+          if(katObiektow > katPrawyGorny || katObiektow < -katPrawyGorny) {
             stronaKolizji[1] = true;
           }
-          if(KatObiektow > -KatPrawyGorny && KatObiektow < -katLewyGorny) {
+          if(katObiektow > -katPrawyGorny && katObiektow < -katLewyGorny) {
             stronaKolizji[2] = true;
           }
-          if(KatObiektow > -katLewyGorny && KatObiektow < katLewyGorny) {
+          if(katObiektow > -katLewyGorny && katObiektow < katLewyGorny) {
             stronaKolizji[3] = true;
       }
 

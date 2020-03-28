@@ -1,34 +1,35 @@
-class Moneta {
+class BloczkeMonet {
     constructor(img, x, y, w, h) {
-            this.obraz = new Obraz(img, 960, 256, 16, 16);
+            this.obraz = new Obraz(img, 3408, 128, 16, 16);
             this.animacja = {
-              obrot: {
-                klatka: [new Obraz(img, 960, 256, 16, 16),
-                        new Obraz(img, 976, 256, 16, 16),
-                        new Obraz(img, 992, 256, 16, 16),
-                        new Obraz(img, 1008, 256, 16, 16)],
-                obecnaKlatka: 0
-              }
+          pełny: new Obraz(img, 3408, 128, 16, 16),
+          pusty: new Obraz(img, 3424, 128, 16, 16)
             };
             this.stan = {
-              obrot: {
+              drganie: {
+                licznik: 0,
+                ruch: (dane) => {
+                  this.obecnyStan.licznik++;
+                  if(this.obecnyStan.licznik < 5) {
+                    this.y -= 2;
+                    if(this.monety > 0) this.monety.y -= 8;
+                  } else if (this.obecnyStan.licznik < 10) {
+                    this.y += 2;
+                    if(this.monety > 0) this.monety.y -= 5;
+                  }
+                },
                 animacja: (dane) => {
-                  if(dane.nrKlatki % 5 == 0) {
-                                  this.obraz = this.animacja.obrot.klatka[this.animacja.obrot.obecnaKlatka];
-                                  this.animacja.obrot.obecnaKlatka++;
-                              }
-                              
-                              if(this.animacja.obrot.obecnaKlatka > 3) {
-                                  this.animacja.obrot.obecnaKlatka = 0;
-                              }
+
                 }
               }
             };
-            this.obecnyStan = this.stan.obrot;
+            this.obecnyStan = this.stan.spoczynek;
             this.x = x;
                   this.y = y;
                   this.w = w;
                   this.h = h;
-                  this.typ = "moneta";
+                  this.monety = 10;
+                  this.moneta = new Moneta(img,x,y,w,h);
+                  this.typ = "bloczekMonet";
     }
 }

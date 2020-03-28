@@ -16,7 +16,7 @@ class BloczkeMonet {
                   } else if (this.obecnyStan.licznik < 10) {
                     this.y += 2;
                     if(this.monety > 0) this.monety.y -= 5;
-                  }
+                  } else if()
                 },
                 animacja: (dane) => {
 

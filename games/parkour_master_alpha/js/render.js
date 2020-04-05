@@ -22,6 +22,7 @@ class Render {
     });
     
     dane.obiekty.tabelaBloczkowMonet.forEach((bm) => {
+      if(bm.monety > 0) this.rysuj(bm.moneta, dane.canvas.fgCtx);
 			this.rysuj(bm, dane.canvas.fgCtx);
 		});
   }

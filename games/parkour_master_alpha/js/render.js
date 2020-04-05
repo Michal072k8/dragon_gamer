@@ -19,6 +19,10 @@ class Render {
 
     dane.obiekty.tabelaMonet.forEach((m) => {
 			this.rysuj(m, dane.canvas.fgCtx);
+    });
+    
+    dane.obiekty.tabelaBloczkowMonet.forEach((bm) => {
+			this.rysuj(bm, dane.canvas.fgCtx);
 		});
   }
 

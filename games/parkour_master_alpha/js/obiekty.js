@@ -27,7 +27,9 @@ class Obiekty {
 
 		let potwory = [[912, 480],[1440, 480], [2880, 480]];
 
-    let monety = [[528,240],[576,240],[624,240]];
+		let monety = [[528,240],[576,240],[624,240]];
+		
+		let bloczkiMonet = [[ 208, 16]];
 
 		dane.obiekty = {};
 		dane.obiekty.niebo = niebo;
@@ -35,7 +37,9 @@ class Obiekty {
 		dane.obiekty.mario = mario;
 		dane.obiekty.tabelaScian = [];
 		dane.obiekty.tabelaPotworow = [];
-    dane.obiekty.tabelaMonet = [];
+		dane.obiekty.tabelaMonet = [];
+		dane.obiekty.tabelaBloczkowMonet = [];
+
 
 		sciany.forEach(function(z) {
 			dane.obiekty.tabelaScian.push(new Sciana(z[0],z[1],z[2],z[3]));
@@ -47,6 +51,10 @@ class Obiekty {
 
 		monety.forEach(function(m) {
 			dane.obiekty.tabelaMonet.push(new Moneta(dane.grafika, m[0], m[1], 48, 48));
+		});
+
+		bloczkiMonet.forEach(function(bm) {
+			dane.obiekty.tabelaBloczkowMonet.push(new BloczekMonet(dane.grafika, bm[0], bm[1], 48, 48));
 		});
   }
 }

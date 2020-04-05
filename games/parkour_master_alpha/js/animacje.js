@@ -1,5 +1,5 @@
 class Animacje {
-    aktualizacja(dane) {
+  aktualizacja(dane) {
 		this.niebo(dane);
 		this.mario(dane);
 		this.potwor(dane);

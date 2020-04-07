@@ -114,6 +114,10 @@ class Mario {
         for( var i = 0; i<dane.obiekty.tabelaMonet.length; i++) {
           dane.obiekty.tabelaMonet[i].x -= this.pedX;
         }
+        for( var i = 0; i<dane.obiekty.tabelaBloczkowMonet.length; i++) {
+          dane.obiekty.tabelaBloczkowMonet[i].moneta.x -= this.pedX;
+          dane.obiekty.tabelaBloczkowMonet[i].x -= this.pedX;
+        }
       }
     }
   }

@@ -81,7 +81,7 @@ class Fizyka {
             obiekt2.moneta.y = obiekt2.sy;
             if(obiekt2.monety > 0) {
               mario.monety++;
-              obiekt2
+              obiekt2.monety--;
             }
           }
         }

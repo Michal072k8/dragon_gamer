@@ -1,4 +1,4 @@
-class BloczkeMonet {
+class BloczekMonet {
     constructor(img, x, y, w, h) {
             this.obraz = new Obraz(img, 3408, 128, 16, 16);
             this.animacja = {

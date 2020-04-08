@@ -12,7 +12,7 @@ class BloczekMonet {
                   this.obecnyStan.licznik++;
                   if(this.obecnyStan.licznik < 5) {
                     this.y -= 2;
-                    if(this.monety > 0) this.monety.y -= 8;
+                     if(this.monety > 0) this.monety.y -= 8;
                   } else if (this.obecnyStan.licznik < 10) {
                     this.y += 2;
                     if(this.monety > 0) this.monety.y -= 5;

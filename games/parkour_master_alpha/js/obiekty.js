@@ -29,7 +29,7 @@ class Obiekty {
 
 		let monety = [[528,240],[576,240],[624,240]];
 		
-		let bloczkiMonet = [[ 208, 16]];
+		let bloczkiMonet = [[ 208, 16],];
 
 		dane.obiekty = {};
 		dane.obiekty.niebo = niebo;

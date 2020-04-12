@@ -1,6 +1,6 @@
 class Platforma {
-    constructor(img, x, y, w, h) {
-      this.obraz = new Obraz(img, 3408, 192, 48, 8);
+    constructor(img, x, y, w, h, z) {
+      this.obraz = new Obraz(img, 960, 288, 16, 8);
       this.stan = {
           poruszanie: {
               ruch: (dane) => {
@@ -9,9 +9,9 @@ class Platforma {
                         this.pedX = 2;
                   }
 
-                  if(this.x + this.w >= this.zakres.max + dane.obiekmapaty.x) {
+                  if(this.x + this.w >= this.zakres.max + dane.obiekty.mapa.x) {
                     this.x = this.zakres.max + dane.obiekty.mapa.x - this.w;
-                    this.pedX.x = -2;
+                    this.pedX = -2;
                   }
                  this.x += this.pedX;
               }

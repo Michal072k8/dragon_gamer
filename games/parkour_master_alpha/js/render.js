@@ -24,6 +24,10 @@ class Render {
       if(bm.monety > 0) this.rysuj(bm.moneta, dane.canvas.fgCtx);
 			this.rysuj(bm, dane.canvas.fgCtx);
     });
+
+    dane.obiekty.tabelaPlatform.forEach((p) => {
+			this.rysuj(p, dane.canvas.fgCtx);
+		});
     
     this.rysuj(dane.obiekty.mario, dane.canvas.fgCtx);
   }

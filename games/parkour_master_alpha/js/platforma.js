@@ -6,9 +6,14 @@ class Platforma {
               ruch: (dane) => {
                   if(this.x <= this.zakres.min + dane.obiekty.mapa.x) {
                       this.x = this.zakres.min + dane.obiekty.mapa.x;
-                        this.
+                        this.pedX = 2;
                   }
-                this.x += this.pedx;
+
+                  if(this.x + this.w >= this.zakres.max + dane.obiekmapaty.x) {
+                    this.x = this.zakres.max + dane.obiekty.mapa.x - this.w;
+                    this.pedX.x = -2;
+                  }
+                 this.x += this.pedX;
               }
           }
       };
@@ -17,7 +22,7 @@ class Platforma {
       this.y = y;
       this.w = w;
       this.h = h;
-      this.pedx = 2;
+      this.pedX = 2;
       this.zakres = z;
       this.typ = "platforma";
     }

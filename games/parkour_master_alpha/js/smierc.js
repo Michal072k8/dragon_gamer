@@ -27,6 +27,10 @@ class Smierc {
         dane.obiekty.tabelaBloczkowMonet[i].x -= dane.obiekty.mapa.x;
       } 
 
+      for(let i = 0; i<dane.obiekty.tabelaPlatform.length; i++) {
+        dane.obiekty.tabelaPlatform[i].x -= dane.obiekty.mapa.x;
+      }
+
       dane.obiekty.mapa.x = mario.x = mario.y = 0;
       mario.pedY = 1;
       mario.obecnyStan = mario.stan.stanie;

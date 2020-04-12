@@ -30,6 +30,8 @@ class Obiekty {
 		
 		let bloczkiMonet = [[ 208, 336],];
 
+		let platformy = [[672,528,]]
+
 		dane.obiekty = {};
 		dane.obiekty.niebo = niebo;
 		dane.obiekty.mapa = mapa;
@@ -38,6 +40,8 @@ class Obiekty {
 		dane.obiekty.tabelaPotworow = [];
 		dane.obiekty.tabelaMonet = [];
 		dane.obiekty.tabelaBloczkowMonet = [];
+		dane.obiekty.tabelaPlatform = [];
+
 
 
 		sciany.forEach(function(z) {
@@ -54,6 +58,10 @@ class Obiekty {
 
 		bloczkiMonet.forEach(function(bm) {
 			dane.obiekty.tabelaBloczkowMonet.push(new BloczekMonet(dane.grafika, bm[0], bm[1], 48, 48));
+		});
+
+		platformy.forEach(function(p) {
+			dane.obiekty.tabelaPlatform.push(new Platforma(dane.grafika, p[0], p[1], 144, 24, p[2]));
 		});
   }
 }

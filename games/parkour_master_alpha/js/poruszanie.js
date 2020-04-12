@@ -3,6 +3,7 @@ class Poruszanie {
 		this.mario(dane);
     this.potwor(dane);
     this.bloczekMonet(dane);
+    this.platforma(dane);
 	}
 
   mario(dane) {
@@ -17,6 +18,12 @@ class Poruszanie {
   bloczekMonet(dane) {
     dane.obiekty.tabelaBloczkowMonet.forEach(function(bm) {
       bm.obecnyStan.ruch(dane);
+    });
+  }
+
+  platforma(dane) {
+    dane.obiekty.tabelaPlatform.forEach(function(p) {
+      p.obecnyStan.ruch(dane);
     });
   }
 }

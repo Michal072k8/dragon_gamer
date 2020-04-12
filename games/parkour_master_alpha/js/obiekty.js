@@ -31,7 +31,7 @@ class Obiekty {
 		
 		let bloczkiMonet = [[48, 336],];
 
-		let platformy = [[144,528,{min: 144, max: 1197}]]
+		let platformy = [[192,528,{min: 192, max: 1197}]]
 
 		dane.obiekty = {};
 		dane.obiekty.niebo = niebo;

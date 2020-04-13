@@ -114,8 +114,11 @@ class Fizyka {
                   new FragmentCegiel(dane.grafika, obiekt2.x + obiekt2.w/2, obiekt2.y, obiekt2.w/2, obiekt2.h/2, 1),
                   new FragmentCegiel(dane.grafika, obiekt2.x, obiekt2.y + obiekt2.h/2, obiekt2.w/2, obiekt2.h/2, 2),
                   new FragmentCegiel(dane.grafika, obiekt2.x + obiekt2.w/2, obiekt2.y + obiekt2.h/2, obiekt2.w/2, obiekt2.h/2, 3)
-
-                )
+                );
+                let nrBloczka = dane.obiekty.tabelaBloczkowCegiel.indexOf(obiekt2);
+                dane.obiekty.tabelaBloczkowCegiel.splice(nrBloczka, 1);
+              }else {
+                obiekt2.obecnyStan = obiekt2.stan.drganie;
               }
             }
           }

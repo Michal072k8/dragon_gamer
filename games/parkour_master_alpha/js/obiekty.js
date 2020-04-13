@@ -29,9 +29,11 @@ class Obiekty {
 		let monety = [[192,336],[240,336],[288,336],[336,336],[384,336],[432,336],[480,336],[528,336],[576,336],[624,336],[672,336],[720,336],[768,336],[816,336],[864,336],[912,336],[960,336],
 		[1008,336],[1056,336],[1104,336],[1152,336],[1200,336]];
 		
-		let bloczkiMonet = [[48, 336],];
+		let bloczkiMonet = [[48,144]];
 
-		let platformy = [[192,528,{min: 192, max: 1197}]]
+		let platformy = [[192,528,{min: 192, max: 1197}]];
+
+		let bloczkiCegiel = [[48, 336],[1776,288],[1920,240],[2064,192]];
 
 		dane.obiekty = {};
 		dane.obiekty.niebo = niebo;
@@ -42,6 +44,9 @@ class Obiekty {
 		dane.obiekty.tabelaMonet = [];
 		dane.obiekty.tabelaBloczkowMonet = [];
 		dane.obiekty.tabelaPlatform = [];
+		dane.obiekty.tabelaBloczkowCegiel = [];
+		dane.obiekty.tabelaFragmentowCegiel = [];
+
 
 
 
@@ -63,6 +68,10 @@ class Obiekty {
 
 		platformy.forEach(function(p) {
 			dane.obiekty.tabelaPlatform.push(new Platforma(dane.grafika, p[0], p[1], 144, 24, p[2]));
+		});
+
+		bloczkiCegiel.forEach(function(bc) {
+			dane.obiekty.tabelaBloczkowCegiel.push(new BloczekCegiel(dane.grafika, bc[0], bc[1], 48, 48));
 		});
   }
 }

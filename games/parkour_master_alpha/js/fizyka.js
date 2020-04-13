@@ -4,6 +4,10 @@ class Fizyka {
 
 		dane.obiekty.tabelaPotworow.forEach((p) => {
 			this.grawitacja(p);
+    });
+    
+    dane.obiekty.tabelaFragmentowCegiel.forEach((fc) => {
+			this.grawitacja(fc);
 		});
 
 		this.wykrywanieKolizji(dane);
@@ -49,6 +53,10 @@ class Fizyka {
       
       dane.obiekty.tabelaPlatform.forEach((platforma) => {
 				wykrywanieKolizji(mario, platforma);
+      });
+      
+      dane.obiekty.tabelaBloczkowCegiel.forEach((bloczkeCegiel) => {
+				wykrywanieKolizji(mario, bloczkeCegiel);
 			});
     }
 
@@ -65,6 +73,10 @@ class Fizyka {
       
       dane.obiekty.tabelaPlatform.forEach((platforma) => {
 				wykrywanieKolizji(potwor, platforma);
+      });
+      
+      dane.obiekty.tabelaBloczkowCegiel.forEach((bloczkeCegiel) => {
+				wykrywanieKolizji(potwor, bloczkeCegiel);
 			});
     });
   }
@@ -73,7 +85,7 @@ class Fizyka {
     let stronaKolizji = this.stronaKolizji(obiekt1, obiekt2);
     if(obiekt1.typ === "mario") {
       let mario = obiekt1;
-      if(obiekt2.typ === "sciana" || obiekt2.typ==="bloczekMonet" || obiekt2.typ === "platforma") {
+      if(obiekt2.typ === "sciana" || obiekt2.typ==="bloczekMonet" || obiekt2.typ === "platforma" || obiekt2.typ === "bloczkeCegiel") {
         if(stronaKolizji[0]) {
           mario.obecnyStan = mario.stan.stanie;
           mario.y = obiekt2.y - mario.h;
@@ -94,6 +106,17 @@ class Fizyka {
             if(obiekt2.monety > 0) {
               mario.monety++;
               obiekt2.monety--;
+            }
+            if(obiekt2.typ === "bloczkeCegiel") {
+              if(mario.mozeNiszczyc) {
+                dane.obiekty.tabelaFragmentowCegiel.push(
+                  new FragmentCegiel(dane.grafika, obiekt2.x, obiekt2.y, obiekt2.w/2, obiekt2.h/2, 0),
+                  new FragmentCegiel(dane.grafika, obiekt2.x + obiekt2.w/2, obiekt2.y, obiekt2.w/2, obiekt2.h/2, 1),
+                  new FragmentCegiel(dane.grafika, obiekt2.x, obiekt2.y + obiekt2.h/2, obiekt2.w/2, obiekt2.h/2, 2),
+                  new FragmentCegiel(dane.grafika, obiekt2.x + obiekt2.w/2, obiekt2.y + obiekt2.h/2, obiekt2.w/2, obiekt2.h/2, 3)
+
+                )
+              }
             }
           }
         }
@@ -127,7 +150,7 @@ class Fizyka {
       }
     } else if(obiekt1.typ === "potwor") {
       let potwor = obiekt1;
-      if(obiekt2.typ === "sciana" || obiekt2.typ==="bloczekMonet" || obiekt2.typ === "platforma") {
+      if(obiekt2.typ === "sciana" || obiekt2.typ==="bloczekMonet" || obiekt2.typ === "platforma"  || obiekt2.typ === "bloczkeCegiel") {
         if(stronaKolizji[0]) {
           potwor.obecnyStan = potwor.stan.poruszanie;
           potwor.y = obiekt2.y - potwor.h;

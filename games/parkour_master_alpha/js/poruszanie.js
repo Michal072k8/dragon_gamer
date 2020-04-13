@@ -4,6 +4,8 @@ class Poruszanie {
     this.potwor(dane);
     this.bloczekMonet(dane);
     this.platforma(dane);
+    this.bloczekCegiel(dane);
+    this.fragmentCegiel(dane);
 	}
 
   mario(dane) {
@@ -24,6 +26,18 @@ class Poruszanie {
   platforma(dane) {
     dane.obiekty.tabelaPlatform.forEach(function(p) {
       p.obecnyStan.ruch(dane);
+    });
+  }
+
+  bloczekCegiel(dane) {
+    dane.obiekty.tabelaBloczkowCegiel.forEach(function(bc) {
+      bc.obecnyStan.ruch(dane);
+    });
+  }
+
+  fragmentCegiel(dane) {
+    dane.obiekty.tabelaFragmentowCegiel.forEach(function(fc) {
+      fc.obecnyStan.ruch(dane);
     });
   }
 }

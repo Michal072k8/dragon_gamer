@@ -15,7 +15,9 @@ class Fizyka {
   }
 
   grawitacja(obiekt) {
-    if(!obiekt.momentSmierci) obiekt.obecnyStan = obiekt.stan.skakanie;
+    if(obiekt.typ === "mario" &&  !obiekt.momentSmierci) {
+      obiekt.obecnyStan = obiekt.stan.skakanie;
+    }
     obiekt.pedY+=1;
     obiekt.y+=obiekt.pedY;
   }
@@ -103,23 +105,22 @@ class Fizyka {
             obiekt2.obecnyStan.licznik = 0;
             obiekt2.y = obiekt2.sy;
             obiekt2.moneta.y = obiekt2.sy;
-            if(obiekt2.monety > 0) {
+            if(obiekt2.monety > 0)
               mario.monety++;
-              obiekt2.monety--;
-            }
-            if(obiekt2.typ === "bloczekCegiel") {
-              if(mario.mozeNiszczyc) {
-                dane.obiekty.tabelaFragmentowCegiel.push(
-                  new FragmentCegiel(dane.grafika, obiekt2.x, obiekt2.y, obiekt2.w/2, obiekt2.h/2, 0),
-                  new FragmentCegiel(dane.grafika, obiekt2.x + obiekt2.w/2, obiekt2.y, obiekt2.w/2, obiekt2.h/2, 1),
-                  new FragmentCegiel(dane.grafika, obiekt2.x, obiekt2.y + obiekt2.h/2, obiekt2.w/2, obiekt2.h/2, 2),
-                  new FragmentCegiel(dane.grafika, obiekt2.x + obiekt2.w/2, obiekt2.y + obiekt2.h/2, obiekt2.w/2, obiekt2.h/2, 3)
-                );
-                let nrBloczka = dane.obiekty.tabelaBloczkowCegiel.indexOf(obiekt2);
-                dane.obiekty.tabelaBloczkowCegiel.splice(nrBloczka, 1);
-              }else {
-                obiekt2.obecnyStan = obiekt2.stan.drganie;
-              }
+            obiekt2.monety--;
+          }
+          if(obiekt2.typ === "bloczekCegiel") {
+            if(mario.mozeNiszczyc) {
+              dane.obiekty.tabelaFragmentowCegiel.push(
+                new FragmentCegiel(dane.grafika, obiekt2.x, obiekt2.y, obiekt2.w/2, obiekt2.h/2, 0),
+                new FragmentCegiel(dane.grafika, obiekt2.x + obiekt2.w/2, obiekt2.y, obiekt2.w/2, obiekt2.h/2, 1),
+                new FragmentCegiel(dane.grafika, obiekt2.x, obiekt2.y + obiekt2.h/2, obiekt2.w/2, obiekt2.h/2, 2),
+                new FragmentCegiel(dane.grafika, obiekt2.x + obiekt2.w/2, obiekt2.y + obiekt2.h/2, obiekt2.w/2, obiekt2.h/2, 3)
+              );
+              let nrBloczka = dane.obiekty.tabelaBloczkowCegiel.indexOf(obiekt2);
+              dane.obiekty.tabelaBloczkowCegiel.splice(nrBloczka, 1);
+            }else {
+              obiekt2.obecnyStan = obiekt2.stan.drganie;
             }
           }
         }

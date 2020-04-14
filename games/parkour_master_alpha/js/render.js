@@ -7,6 +7,7 @@ class Render {
 
     dane.canvas.fgCtx.clearRect(0,0, dane.canvas.fgCtx.canvas.width, dane.canvas.fgCtx.canvas.height);
     //this.rysuj(dane.obiekty.mario, dane.canvas.fgCtx);
+    
 
 		this.pisz("Lives: " + dane.obiekty.mario.zycia, dane.canvas.fgCtx, 16, 32, "16px", "PixelEmulator");
 		this.pisz("Score: " + dane.obiekty.mario.monety, dane.canvas.fgCtx, 772, 32, "16px", "PixelEmulator");

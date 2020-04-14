@@ -1,6 +1,6 @@
 class BloczekCegiel {
 	constructor(img, x,y,w,h) {
-		this.obraz = new Obraz(img, 2976, 816, 16, 16);
+		this.obraz = new Obraz(img, 992, 272, 16, 16);
 		this.stan = {
 			drganie: {
 				licznik: 0,

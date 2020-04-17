@@ -6,6 +6,10 @@ class Poruszanie {
     this.platforma(dane);
     this.bloczekCegiel(dane);
     this.fragmentCegiel(dane);
+    this.bloczekGrzybow(dane);
+    this.grzyb(dane);
+
+
 	}
 
   mario(dane) {
@@ -38,6 +42,18 @@ class Poruszanie {
   fragmentCegiel(dane) {
     dane.obiekty.tabelaFragmentowCegiel.forEach(function(fc) {
       fc.obecnyStan.ruch(dane);
+    });
+  }
+
+  bloczekGrzybow(dane) {
+    dane.obiekty.tabelaBloczkowGrzybow.forEach(function(bg) {
+      bg.obecnyStan.ruch(dane);
+    });
+  }
+
+  grzyb(dane) {
+    dane.obiekty.tabelaGrzybow.forEach(function(g) {
+      g.obecnyStan.ruch(dane);
     });
   }
 }

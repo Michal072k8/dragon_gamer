@@ -37,6 +37,14 @@ class Render {
     
     dane.obiekty.tabelaFragmentowCegiel.forEach((fc) => {
 			this.rysuj(fc, dane.canvas.fgCtx);
+    });
+    
+    dane.obiekty.tabelaGrzybow.forEach((g) => {
+			this.rysuj(g, dane.canvas.fgCtx);
+    });
+    
+    dane.obiekty.tabelabloczkowGrzybow.forEach((bg) => {
+			this.rysuj(bg, dane.canvas.fgCtx);
 		});
     
     this.rysuj(dane.obiekty.mario, dane.canvas.fgCtx);

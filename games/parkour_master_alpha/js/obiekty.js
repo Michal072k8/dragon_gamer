@@ -48,6 +48,10 @@ class Obiekty {
 		dane.obiekty.tabelaPlatform = [];
 		dane.obiekty.tabelaBloczkowCegiel = [];
 		dane.obiekty.tabelaFragmentowCegiel = [];
+		dane.obiekty.tabelaBloczkowGrzybow = [];
+		dane.obiekty.tabelaGrzybow = [];
+
+		
 
 
 
@@ -74,6 +78,10 @@ class Obiekty {
 
 		bloczkiCegiel.forEach(function(bc) {
 			dane.obiekty.tabelaBloczkowCegiel.push(new BloczekCegiel(dane.grafika, bc[0], bc[1], 48, 48));
+		});
+
+		bloczkiGrzybow.forEach(function(bg) {
+			dane.obiekty.tabelaBloczkowGrzybow.push(new BloczekiGrzybow(dane.grafika, bg[0], bg[1], 48, 48, bg[2]));
 		});
   }
 }

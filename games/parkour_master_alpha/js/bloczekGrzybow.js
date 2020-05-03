@@ -48,7 +48,7 @@ class BloczekGrzybow {
 		this.sy = y;
 		this.w = w;
         this.h = h;
-        this.pełny - true;
+        this.pelny - true;
         this.rodzaj = r;
 		this.typ = "bloczekGrzybow";
 	}

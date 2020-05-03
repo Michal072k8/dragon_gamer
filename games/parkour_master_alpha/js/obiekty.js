@@ -33,7 +33,10 @@ class Obiekty {
 
 		let platformy = [[192,528,{min: 192, max: 1197}]];
 
-		let bloczkiCegiel = [[1776,288],[1920,240],[2064,192],[1200,192],[1104,192],[912,192],[660,192],[528,144],[480,192],[432,192],[384,192],[336,144]];
+		let bloczkiCegiel = [
+			[1776,288],[1920,240],[2064,192],[1200,192],[1104,192],[912,192],
+			[660,192],[528,144],[480,192],[432,192],[384,192],[336,144]
+		];
 
 		let bloczkiGrzybow = [[432,144,"zycie"],[1448,480,"powiekszanie"],[1920,192,"strzelanie"]];
 
@@ -50,11 +53,6 @@ class Obiekty {
 		dane.obiekty.tabelaFragmentowCegiel = [];
 		dane.obiekty.tabelaBloczkowGrzybow = [];
 		dane.obiekty.tabelaGrzybow = [];
-
-		
-
-
-
 
 		sciany.forEach(function(z) {
 			dane.obiekty.tabelaScian.push(new Sciana(z[0],z[1],z[2],z[3]));
@@ -81,7 +79,7 @@ class Obiekty {
 		});
 
 		bloczkiGrzybow.forEach(function(bg) {
-			dane.obiekty.tabelaBloczkowGrzybow.push(new BloczekiGrzybow(dane.grafika, bg[0], bg[1], 48, 48, bg[2]));
+			dane.obiekty.tabelaBloczkowGrzybow.push(new BloczekGrzybow(dane.grafika, bg[0], bg[1], 48, 48, bg[2]));
 		});
   }
 }

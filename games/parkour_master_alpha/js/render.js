@@ -43,7 +43,7 @@ class Render {
 			this.rysuj(g, dane.canvas.fgCtx);
     });
     
-    dane.obiekty.tabelabloczkowGrzybow.forEach((bg) => {
+    dane.obiekty.tabelaBloczkowGrzybow.forEach((bg) => {
 			this.rysuj(bg, dane.canvas.fgCtx);
 		});
     

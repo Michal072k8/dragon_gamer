@@ -11,7 +11,7 @@ class Fizyka {
     });
     
     dane.obiekty.tabelaGrzybow.forEach((g) => {
-      if(g.obecnyStan != g.stan.wysscie) {
+      if(g.obecnyStan != g.stan.wyjscie) {
         this.grawitacja(g)
       }
 		});
@@ -96,28 +96,30 @@ class Fizyka {
 			});
     });
 
-    dane.obiekty.tabelaGrzybow.forEach((potwor) => {
-      if(!mario.momentSmierci) wykrywanieKolizji(mario, potwor);
+    dane.obiekty.tabelaGrzybow.forEach((Grzyb) => {
+      if(Grzyb.obecnyStan != Grzyb.stan.wyjscie){
+      if(!mario.momentSmierci) wykrywanieKolizji(mario, Grzyb);
 
       dane.obiekty.tabelaScian.forEach((sciana) => {
-				wykrywanieKolizji(potwor, sciana);
+				wykrywanieKolizji(Grzyb, sciana);
       });
       
       dane.obiekty.tabelaBloczkowMonet.forEach((bloczekMonet) => {
-				wykrywanieKolizji(potwor, bloczekMonet);
+				wykrywanieKolizji(Grzyb, bloczekMonet);
       });
       
       dane.obiekty.tabelaPlatform.forEach((platforma) => {
-				wykrywanieKolizji(potwor, platforma);
+				wykrywanieKolizji(Grzyb, platforma);
       });
       
       dane.obiekty.tabelaBloczkowCegiel.forEach((bloczekCegiel) => {
-				wykrywanieKolizji(potwor, bloczekCegiel);
+				wykrywanieKolizji(Grzyb, bloczekCegiel);
       });
       
       dane.obiekty.tabelaBloczkowGrzybow.forEach((bloczekGrzybow) => {
-				wykrywanieKolizji(potwor, bloczekGrzybow);
-			});
+				wykrywanieKolizji(Grzyb, bloczekGrzybow);
+        });
+      }
     });
   }
 
@@ -217,6 +219,26 @@ class Fizyka {
         if(stronaKolizji[1]) {
           potwor.x = obiekt2.x + obiekt2.w;
           potwor.pedX = 2;
+        }
+      }
+    } else if(obiekt1.typ === "grzyb") {
+      let grzyb = obiekt1;
+      if(obiekt2.typ === "sciana" || obiekt2.typ==="bloczekMonet" || obiekt2.typ === "platforma"  || obiekt2.typ === "bloczekCegiel" || obiekt2.typ === "bloczekGrzybow") {
+        if(stronaKolizji[0]) {
+          grzyb.obecnyStan = grzyb.stan.poruszanie;
+          grzyb.y = obiekt2.y - grzyb.h;
+          grzyb.pedY = 0;
+          if(obiekt2.typ === "platforma") {
+            grzyb.x += obiekt2.pedX;
+          }
+        }
+        if(stronaKolizji[3]) {
+          grzyb.x = obiekt2.x - grzyb.w;
+          grzyb.pedX = -2;
+        }
+        if(stronaKolizji[1]) {
+          grzyb.x = obiekt2.x + obiekt2.w;
+          grzyb.pedX = 2;
         }
       }
     }

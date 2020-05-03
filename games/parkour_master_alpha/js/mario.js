@@ -129,8 +129,8 @@ class Mario {
           dane.obiekty.tabelaFragmentowCegiel[i].x -= this.pedX;
         }
 
-        for( var i = 0; i<dane.obiekty.tabelaBlockzowGrzybow.length; i++) {
-          dane.obiekty.tabelaBlockzowGrzybow[i].x -= this.pedX;
+        for( var i = 0; i<dane.obiekty.tabelaBloczkowGrzybow.length; i++) {
+          dane.obiekty.tabelaBloczkowGrzybow[i].x -= this.pedX;
         }
 
         for( var i = 0; i<dane.obiekty.tabelaGrzybow.length; i++) {

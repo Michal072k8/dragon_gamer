@@ -34,11 +34,9 @@ class Obiekty {
 		let platformy = [[192,528,{min: 192, max: 1197}]];
 
 		let bloczkiCegiel = [
-			[1776,288],[1920,240],[2064,192],[1200,192],[1104,192],[912,192],
-			[660,192],[528,144],[480,192],[432,192],[384,192],[336,144]
-		];
+			[1776,288],[1920,240],[2064,192]];
 
-		let bloczkiGrzybow = [[432,144,"zycie"],[1448,480,"powiekszanie"],[1920,192,"strzelanie"]];
+		let bloczkiGrzybow = [[432,192,"zycie"],[1448,192,"powiekszanie"],[1920,240,"strzelanie"]];
 
 		dane.obiekty = {};
 		dane.obiekty.niebo = niebo;

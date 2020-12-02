@@ -30,6 +30,9 @@ body
             font-family: 'Josefin Sans', sans-serif;
             font-size: 70px;
             width: 600px;
+            color: white;
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
 
         #zegar
@@ -37,6 +40,9 @@ body
             float: left;
             font-family: 'Josefin Sans', sans-serif;
             font-size: 70px;
+            color: white;
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
         
         .tile1
@@ -45,6 +51,7 @@ body
             width: 230px;
             height: 142px;
             background-color: #3095d3;
+            color: white;
             float: left;
         }
 
@@ -54,7 +61,36 @@ body
             width: 230px;
             height: 142px;
             background-color: #666666;
+            color: white;
             float: left;
+        }
+
+        .tile3
+        {
+            margin: 10px;
+            width: 230px;
+            height: 142px;
+            background-color: #93c749;
+            color: white;
+            float: left;
+        }
+
+        .tile4
+        {
+            margin: 10px;
+            width: 480px;
+            height: 142px;
+            background-color: #ee5a32;       
+            color: white; 
+        }
+    
+        .tile5
+        {
+            margin: 10px;
+            width: 480px;
+            height: 304px;
+            background-color: #666666;    
+            color: white; 
         }
     
 

@@ -96,9 +96,39 @@ body
         .yt
         {
             margin: 10px;
-            width: 110px;
-            height: 342px;
-            background-color: red;
+            width: 105px;
+            height: 142px;
+            background-color: #d94348;
+            color: white;
+            float: left;
+        }
+
+        .fb
+        {
+            margin: 10px;
+            width: 105px;
+            height: 142px;
+            background-color: #d94348;
+            color: white;
+            float: left;
+        }
+
+        .gplus
+        {
+            margin: 10px;
+            width: 105px;
+            height: 142px;
+            background-color: #d94348;
+            color: white;
+            float: left;
+        }
+
+        .tw
+        {
+            margin: 10px;
+            width: 105px;
+            height: 142px;
+            background-color: #d94348;
             color: white;
             float: left;
         }

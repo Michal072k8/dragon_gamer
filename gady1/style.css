@@ -16,6 +16,8 @@ body
         {
             width: 960px;
             margin: 20px;
+            color: white;
+            text-align: center;
         }
 
         .square
@@ -31,8 +33,7 @@ body
             font-size: 70px;
             width: 600px;
             color: white;
-            margin-top: 10px;
-            margin-bottom: 10px;
+            text-align: left;
         }
 
         #zegar
@@ -41,8 +42,7 @@ body
             font-family: 'Josefin Sans', sans-serif;
             font-size: 70px;
             color: white;
-            margin-top: 10px;
-            margin-bottom: 10px;
+            text-align: left;
         }
         
         .tile1
@@ -108,7 +108,7 @@ body
             margin: 10px;
             width: 105px;
             height: 142px;
-            background-color: #d94348;
+            background-color: #4668b3;
             color: white;
             float: left;
         }
@@ -118,7 +118,7 @@ body
             margin: 10px;
             width: 105px;
             height: 142px;
-            background-color: #d94348;
+            background-color: #d95333;
             color: white;
             float: left;
         }
@@ -128,7 +128,7 @@ body
             margin: 10px;
             width: 105px;
             height: 142px;
-            background-color: #d94348;
+            background-color: #3095d3;
             color: white;
             float: left;
         }

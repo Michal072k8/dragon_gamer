@@ -1,66 +1,55 @@
-<style>
-	
-		a
-	{
-		color: black;
-	}
+#skladnia
+{
+    width: 600px;
+    margin-left: auto;
+    margin-left: auto;
+}
 
-	a
-	{
-		color:black
-	}
-	
-	 #container
-	 {
-		 width: 1000px;
-		 margin-left:auto;
-		 margin-right:auto;
-	 } 
+#logo
+{
+    background-color: #027738;
+	color: #5bb183;
+	text-align: center;
+    padding: 10px;
+    margin: 10px;
+    width: 1690px;
+}
+#navigation
+{
+    float: left;
+    background-color: lightgreen;
+    width: 200px;
+    min-height: 520px;
+    padding: 10px;
+    margin: 10px;
+}
 
-	 #logo
-	 {
-		background-color: black;
-		color: white;
-		text-align: center;
-		padding: 10px;
-	 }
+#content
+{
+    background-color: lightgray;
+    margin: 10px;
+    padding: 10px;
+    width: 1200px;
+    min-height: 520px;
+    float: left;
+}
 
-	 #nav
-	 {
-		float: left;
-		background-color: lightgray;
-		width: 120px;
-		min-height: 620px;
-		padding: 10px;
-	 }
+#reklama
+{
+    background-color: bisque;
+    margin: 10px;
+    padding: 10px;
+    min-height: 520px;
+    float: left;
+    width: 194px;
+}
 
-	 #content
-	 {
-		float: left;
-		padding: 20px;
-		width: 640px;
-	 }
-
-	 #hh1
-	 {
-		text-align: center;
-	 }
-
-	 #ad
-	 {
-		float: left;
-		width: 160px;
-		min-height: 620px;
-		padding: 10px;
-		background-color: lightgray;
-	 }
-
-	 #footer
-	 {
-		clear: both;
-		background-color: black;
-		color: white;
-		text-align: center;
-		padding: 20px;
-	 }
- 	</style>
+#footer
+{
+    background-color: aqua;
+    margin: 10px;
+    padding: 30px;
+    clear: both;
+    width: 1640px;
+    text-align: center;
+}

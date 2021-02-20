@@ -1,0 +1,49 @@
+.hedder
+{
+    
+}
+#logo
+{
+    float: left;
+    color: green;
+    padding: 1%;
+}
+#strona_glowna
+{
+    text-align: left;
+    color: red;
+    float: left;
+    padding: 1%;
+}
+
+#gady
+{
+    text-align: left;
+    color: red;
+    float: left;
+    padding: 1%;
+}
+
+#forum
+{
+    text-align: left;
+    color: red;
+    float: left;
+    padding: 1%;
+}
+
+#hodowcy
+{
+    text-align: left;
+    color: red;
+    float: left;
+    padding: 1%;
+}
+
+#kontakt
+{
+    text-align: left;
+    color: red;
+    float: left;
+    padding: 1%;
+}

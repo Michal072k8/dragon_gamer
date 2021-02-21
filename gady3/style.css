@@ -9,13 +9,33 @@
     border-bottom-right-radius: 45px;
     border-bottom-left-radius: 45px;
 }
+
+/* unvisited link */
+a:link {
+    color: rgb(38, 179, 38);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  a:active {
+    text-decoration: underline;
+  }
+  
+
 .logo
 {
     color: rgb(38, 179, 38);
+    width: 150px;
+    float: left;
 }
+
 #Vanilla
 {
-
+    margin-block-end: 0em;
+    margin-block-start: 0em;
 }
 #terra
 {

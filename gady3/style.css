@@ -1,13 +1,25 @@
 .hedder
 {
+    background-color: green;
+    height: 100px;
+    width: 98%;
     padding: 1%;
+    border-top-right-radius: 45px;
+    border-top-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+    border-bottom-left-radius: 45px;
 }
-#logo
+.logo
 {
-    float: left;
     color: rgb(38, 179, 38);
-    padding: 1%;
-    background: linear-gradient(to right, lightgreen, yellow);
+}
+#Vanilla
+{
+
+}
+#terra
+{
+margin-left: 3%;
 }
 #strona_glowna
 {
@@ -16,7 +28,6 @@
     float: left;
     padding: 1%;
     margin-left: 20%;
-    background: linear-gradient(to right, yellow, rgb(179, 255, 0))
 }
 
 #gady
@@ -25,7 +36,6 @@
     color: rgb(38, 179, 38);
     float: left;
     padding: 1%;
-    background: linear-gradient(to right, lightgreen, yellow)
 }
 
 #forum
@@ -34,7 +44,6 @@
     color: rgb(38, 179, 38);
     float: left;
     padding: 1%;   
-    background: linear-gradient(to right, yellow, lightgreen)
 }
 
 #hodowcy
@@ -43,7 +52,6 @@
     color: rgb(38, 179, 38);
     float: left;
     padding: 1%;
-    background: linear-gradient(to right, lightgreen, yellow)
 }
 
 #kontakt
@@ -52,5 +60,4 @@
     color: rgb(38, 179, 38);
     float: left;
     padding: 1%;
-    background: linear-gradient(to right, yellow, lightgreen)
-}
+} 

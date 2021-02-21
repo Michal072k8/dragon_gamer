@@ -1,49 +1,56 @@
 .hedder
 {
-    
+    padding: 1%;
 }
 #logo
 {
     float: left;
-    color: green;
+    color: rgb(38, 179, 38);
     padding: 1%;
+    background: linear-gradient(to right, lightgreen, yellow);
 }
 #strona_glowna
 {
     text-align: left;
-    color: red;
+    color: rgb(38, 179, 38);
     float: left;
     padding: 1%;
+    margin-left: 20%;
+    background: linear-gradient(to right, yellow, rgb(179, 255, 0))
 }
 
 #gady
 {
     text-align: left;
-    color: red;
+    color: rgb(38, 179, 38);
     float: left;
     padding: 1%;
+    background: linear-gradient(to right, lightgreen, yellow)
 }
 
 #forum
 {
     text-align: left;
-    color: red;
+    color: rgb(38, 179, 38);
     float: left;
-    padding: 1%;
+    padding: 1%;   
+    background: linear-gradient(to right, yellow, lightgreen)
 }
 
 #hodowcy
 {
     text-align: left;
-    color: red;
+    color: rgb(38, 179, 38);
     float: left;
     padding: 1%;
+    background: linear-gradient(to right, lightgreen, yellow)
 }
 
 #kontakt
 {
     text-align: left;
-    color: red;
+    color: rgb(38, 179, 38);
     float: left;
     padding: 1%;
+    background: linear-gradient(to right, yellow, lightgreen)
 }

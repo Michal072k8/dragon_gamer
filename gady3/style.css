@@ -10,13 +10,8 @@
     height: 100px;
     width: 98%;
     padding: 1%;
-    border-top-right-radius: 45px;
-    border-top-left-radius: 45px;
-    border-bottom-right-radius: 45px;
-    border-bottom-left-radius: 45px;
 }
 
-/* unvisited link */
 a:link {
     color: rgb(38, 179, 38);
     text-decoration: none;
@@ -95,9 +90,10 @@ margin-left: 3%;
 
 #gecko
 {
-    margin-top: 50%;
+    margin-top: 40%;
     float: left;
-
+    margin-left: 10%;
+    padding: 0;
 }
 
 #agama
@@ -119,5 +115,11 @@ margin-left: 3%;
     padding-top: 1%;
     padding-left: 1%;
     padding-right: 1%;
+}
+
+h6
+{
+    margin-block-start: 1em;
+    margin-block-end: 1em;
 }
 

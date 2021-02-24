@@ -68,6 +68,7 @@ margin-left: 3%;
 .nav
 {
     width: 10%;
+    height: 50%;
 }
 
 #gecko
@@ -97,9 +98,8 @@ margin-left: 3%;
 /*    background-color: #dbffde; */
     margin-left: 10%;
     margin-right: 10%;
-    margin-top: 5%;
+    margin-top: 20%;
     margin-bottom: 10%;
-    padding-top: 1%;
     padding-left: 1%;
     padding-right: 1%;
 }

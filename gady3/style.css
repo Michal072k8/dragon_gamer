@@ -4,7 +4,6 @@ body{
 
 #container
 {
-
 }
 
 
@@ -14,6 +13,11 @@ body{
     height: 100px;
     width: 98%;
     padding: 1%;
+}
+
+content {
+    width: 98%;
+    height: 400px;
 }
 
 .logo
@@ -61,31 +65,29 @@ margin-left: 3%;
 {
     text-align: left;
     color: rgb(38, 179, 38);
-    float: left;
     padding: 1%;
+    float: none;
 } 
 
 .nav
 {
-    width: 10%;
-    height: 50%;
+    width: 189px;
+    height: 400px;
+    margin-right: 0px;
 }
 
 #gecko
 {
-    float: left;
     padding: 0;
     color: rgb(38, 179, 38);
     background-color: green;
     padding: 10%;
     text-align: center;
-    margin-top: 70%;
 }
 
 #agama
 {
     margin-top: 1;
-    float: left;
     margin-bottom: 10%;
     color: rgb(38, 179, 38);
     background-color: green;
@@ -93,12 +95,11 @@ margin-left: 3%;
     padding-bottom: 5%;
 }
 
-#content
+#ct
 {
-/*    background-color: #dbffde; */
     margin-left: 10%;
     margin-right: 10%;
-    margin-top: 20%;
+    /* margin-top: 20%; */
     margin-bottom: 10%;
     padding-left: 1%;
     padding-right: 1%;
@@ -115,7 +116,6 @@ footer
     background-color: green;
     height: 100px;
     width: 98%;
-    /* margin-top: 50%; */
 }
 
 a:link {

@@ -110,12 +110,12 @@ h6
     margin-block-end: 1em;
 }
 
-#footer
+footer
 {
     background-color: green;
     height: 100px;
     width: 98%;
-    margin-top: 50%;
+    /* margin-top: 50%; */
 }
 
 a:link {

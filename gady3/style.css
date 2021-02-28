@@ -2,15 +2,10 @@ body{
     background-color: #dbffde;
 }
 
-#container
-{
-}
-
-
-.hedder
+header
 {
     background-color: green;
-    height: 100px;
+    /* height: 100px; */
     width: 98%;
     padding: 1%;
 }
@@ -51,8 +46,6 @@ margin-left: 3%;
     padding: 1%;
 }
 
-
-
 #hodowcy
 {
     text-align: left;
@@ -71,16 +64,36 @@ margin-left: 3%;
 
 .nav
 {
-    width: 189px;
-    height: 400px;
+    width: 200px;
+    height: 600px;
     margin-right: 0px;
+    color: rgb(38, 179, 38);
+    background-color: green;
+    float: left;
+}
+
+#ct
+{
+    /* margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 20%;
+    margin-bottom: 10%;
+    padding-left: 1%;
+    padding-right: 1%; */
+    width: 1400px;
+    /* height: 400px; */
+    float: left;
+}
+
+#ad {
+    width: 200px;
+    /* height: 400px; */
+    float: right;
 }
 
 #gecko
 {
     padding: 0;
-    color: rgb(38, 179, 38);
-    background-color: green;
     padding: 10%;
     text-align: center;
 }
@@ -89,21 +102,11 @@ margin-left: 3%;
 {
     margin-top: 1;
     margin-bottom: 10%;
-    color: rgb(38, 179, 38);
-    background-color: green;
     text-align: center;
     padding-bottom: 5%;
 }
 
-#ct
-{
-    margin-left: 10%;
-    margin-right: 10%;
-    /* margin-top: 20%; */
-    margin-bottom: 10%;
-    padding-left: 1%;
-    padding-right: 1%;
-}
+
 
 h6
 {

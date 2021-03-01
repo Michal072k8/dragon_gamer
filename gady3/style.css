@@ -74,14 +74,10 @@ margin-left: 3%;
 
 #ct
 {
-    /* margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 20%;
-    margin-bottom: 10%;
-    padding-left: 1%;
-    padding-right: 1%; */
+    
     width: 1400px;
-    /* height: 400px; */
+    margin-top: 1%;
+    margin-left: 1%;
     float: left;
 }
 
@@ -117,8 +113,10 @@ h6
 footer
 {
     background-color: green;
-    height: 100px;
     width: 98%;
+    color: rgb(38, 179, 38);
+    text-align: center;
+    padding: 0.5%;
 }
 
 a:link {

@@ -10,26 +10,17 @@
   <meta name="keywords" content="gady, gekony, agamy, gekony lamparcie, agamy brodate, Vanilla terra" />
 
   <link rel="stylesheet" href="style.css" type="text/css" />
-
+  <script src="myScript.js"></script>
+   
   </head>
     <body>
         <div id="container">
-            
+            <div w3-include-html="header.html"></div>
+            <script>
+                    includeHTML();
+            </script>
             <content>
                 <div class="nav">
-                    <div id="gecko">
-                        <a href="gekon/index.html" target="_blank">
-                            <img src="img/gecko.jpg" width="80%">
-                            eublefar lamparci
-                        </a>
-                    </div>
-
-                    <div id="agama">
-                        <a href="agama/index.html" target="_blank">
-                            <img src="img/agama.jpg" width="80%">
-                                agama brodata
-                        </a>
-                    </div>
                 </div> 
 
                 <div id="ct">
@@ -39,14 +30,17 @@
                     
                 </div>
 
-                <div id="ad">
-                   fvcsdfsdfds
-                </div>
+                <div w3-include-html="ads.html"></div>
+                <script>
+                        includeHTML();
+                </script>
+                
                 
                 <div style="clear: both;"></div>
             </content>
-            <footer>
-                <h3>Wszelkie prawa zastrzeżone &copy</h3>
-            </footer>
+            <div w3-include-html="footer.html"></div>
+            <script>
+                    includeHTML();
+            </script>
         </div>
     </body>

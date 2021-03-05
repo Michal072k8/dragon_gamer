@@ -119,18 +119,23 @@ footer
     padding: 0.5%;
 }
 
+a:visited{
+    color: rgb(38, 179, 38);
+    text-decoration: none;
+}
+
 a:link {
     color: rgb(38, 179, 38);
     text-decoration: none;
-  }
+}
 
-  a:hover {
+a:hover {
     text-decoration: underline;
-  }
+}
   
-  a:active {
+a:active {
     text-decoration: underline;
-  }
+}
 
   #forum
 {

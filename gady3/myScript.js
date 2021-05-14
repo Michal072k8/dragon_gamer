@@ -1,3 +1,19 @@
+    var dzisiaj = new Date();
+    
+    var dzien = dzisiaj.getDate();
+    var miesiac = dzisiaj.getMonth()+1;
+    var rok = dzisiaj.getFullYear();
+
+    var godzina = dzisiaj.getHours();
+    var minuta = dzisiaj.getMinutes();
+    var sekunda = dzisiaj.getSeconds();
+
+    function setTime() {
+      document.getElementsByTagName("zegar").innerHTML = "Godzina:";
+      return;
+    }
+
+
 function includeHTML() {
     var z, i, elmnt, file, xhttp;
     /* Loop through a collection of all HTML elements: */

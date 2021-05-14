@@ -1,16 +1,28 @@
 #jaszczurki
 {
-
+    background-color: red;
+    float: left;
+    height: 400px;
+    width: 100px;
 }
-#węże
+#weze
 {
-
+    background-color: green;
+    float: left;
+    height: 400px;
+    width: 100px;
 }
-#żółwie
+#zolwie
 {
-
+    background-color: yellow;
+    float: left;
+    height: 400px;
+    width: 100px;
 }
 #sfenodonty
 {
-    
+    background-color: blue;
+    float: left;
+    height: 400px;
+    width: 100px;
 }

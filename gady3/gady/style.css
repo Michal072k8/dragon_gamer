@@ -3,26 +3,33 @@
     background-color: red;
     float: left;
     height: 400px;
-    width: 100px;
+    width: 342px;
+    margin-right: 10px;
+    text-align: center;
 }
 #weze
 {
     background-color: green;
     float: left;
     height: 400px;
-    width: 100px;
+    width: 342px;
+    margin-right: 10px;
+    text-align: center;
 }
 #zolwie
 {
     background-color: yellow;
     float: left;
     height: 400px;
-    width: 100px;
+    width: 342px;
+    margin-right: 10px;
+    text-align: center;
 }
 #sfenodonty
 {
     background-color: blue;
     float: left;
     height: 400px;
-    width: 100px;
+    width: 342px;
+    text-align: center;
 }

@@ -139,11 +139,19 @@ a:active {
     text-decoration: underline;
 }
 
-  #forum
+#forum
 {
     text-align: left;
     color: rgb(38, 179, 38);
     float: left;
     padding: 1%;   
+}
+
+#zegar {
+    width: 200px;
+    height: 400px;
+    float: right;
+    background-color:yellow;
+    height: 600px;
 }
 

@@ -1,8 +1,11 @@
-#gady
+#gadya
 {
     background-color: aqua;
     width: 98%;
     margin-bottom: 10px;
+    height: 100px;
+    text-align: center;
+    padding: 1px;
 }
 
 #jaszczurki

@@ -1,3 +1,14 @@
+* {
+    box-sizing: border-box;
+  }
+
+  @media only screen and (max-width: 620px) {
+    /* For mobile phones: */
+    .nav, .ct, .ad {
+      width: 100%;
+    }
+  }
+
 body{
     background-color: #dbffde;
 }
@@ -5,14 +16,12 @@ body{
 header
 {
     background-color: green;
-    /* height: 100px; */
-    width: 98%;
-    padding: 1%;
+    padding:15px;
+    text-align:center;
 }
 
 content {
-    width: 98%;
-    height: 600px;
+    overflow: auto;
 }
 
 .logo
@@ -64,29 +73,28 @@ margin-left: 3%;
 
 .nav
 {
-    width: 200px;
-    height: 600px;
-    margin-right: 0px;
+    width: 20%;
+    /* height: 600px; */
     color: rgb(38, 179, 38);
     background-color: green;
     float: left;
+    text-align: center;
 }
 
 #ct
 {
-    
-    width: 100%;
-    margin-top: 1%;
-    margin-left: 1%;
     float: left;
+    width: 60%;
+    padding: 0 20px;
 }
 
 #ad {
-    width: 200px;
-    /* height: 400px; */
-    float: right;
+    float: left;
+    width: 20%;
+    padding: 15px;
+    margin-top: 7px;
+    text-align: center;
     background-color:yellow;
-    height: 600px;
 }
 
 #gecko
@@ -115,10 +123,10 @@ h6
 footer
 {
     background-color: green;
-    width: 99%;
     color: rgb(38, 179, 38);
-    text-align: center;
-    padding: 0.5%;
+    text-align:center;
+    padding:10px;
+    margin-top:7px;
 }
 
 a:visited{
@@ -145,13 +153,5 @@ a:active {
     color: rgb(38, 179, 38);
     float: left;
     padding: 1%;   
-}
-
-#zegar {
-    width: 200px;
-    height: 400px;
-    float: right;
-    background-color:yellow;
-    height: 600px;
 }
 

@@ -7,7 +7,7 @@
       width: 100%;
     }
   }
-
+/* 
   @media only screen and (max-width: 900px) {
     .gady-box {
         width: 50%;
@@ -18,13 +18,13 @@
     .gady-box {
         width: 100%;
     }
-}
+} */
 
 body{
     background-color: #dbffde;
 }
 
-header
+/* header
 {
     background-color: green;
     padding:15px;
@@ -33,9 +33,9 @@ header
 
 content {
     overflow: auto;
-}
+} */
 
-.logo
+/* .logo
 {
     float: left;
 }
@@ -64,9 +64,9 @@ margin-left: 3%;
     color: rgb(38, 179, 38);
     float: left;
     padding: 1%;
-}
+} */
 
-#hodowcy
+/* #hodowcy
 {
     text-align: left;
     color: rgb(38, 179, 38);
@@ -80,7 +80,7 @@ margin-left: 3%;
     color: rgb(38, 179, 38);
     padding: 1%;
     float: none;
-} 
+}  */
 
 .nav
 {
@@ -97,19 +97,19 @@ margin-left: 3%;
 .ct
 {
     width: 60%;
-    margin-top: 7px;
+    /* margin-top: 7px; */
     float: left;
 }
 
 .ad {
     width: 20%;
-    margin-top: 7px;
-    text-align: center;
-    background-color:yellow;
-    height: 700px;
+    /* margin-top: 7px; */
+    /* text-align: center; */
+    /* background-color:yellow; */
+    /* height: 700px; */
     float: left;
 }
-
+/* 
 h6
 {
     margin-block-start: 1em;
@@ -150,4 +150,4 @@ a:active {
     float: left;
     padding: 1%;   
 }
-
+ */

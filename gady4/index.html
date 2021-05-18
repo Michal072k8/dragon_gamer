@@ -10,17 +10,62 @@
   <meta name="keywords" content="gady, gekony, agamy, gekony lamparcie, agamy brodate, Vanilla terra" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="style.css" type="text/css" />
+  <style>
+        * {
+          box-sizing: border-box;
+        }
+        
+        .menu {
+          float: left;
+          width: 20%;
+        }
+        
+        
+        .main {
+          float: left;
+          width: 60%;
+        }
+        
+        .right {
+          float: left;
+          width: 20%;
+        }
+        
+        @media only screen and (max-width: 620px) {
+          /* For mobile phones: */
+          .nav, .main, .right {
+            width: 100%;
+          }
+        }
+        </style>
   <script src="myScript.js"></script>
    
   </head>
     <body>
-        <div id="container">
-            <div w3-include-html="header.html"></div>
+        <!-- <div id="container"> -->
+            <!-- <div w3-include-html="header.html"></div>
             <script>
                     includeHTML();
             </script>
-            <content>
+            <content> -->
+                    <div style="overflow:auto">
+                            <div class="nav">
+                                    <a href="https://www.terrarium.com.pl" target="_blank" >
+                                        <img src="https://www.terrarium.com.pl/banner/baner/terrarium/ULOTKA_KAMELEON.jpg" border="0" alt="Terrarystyka terrarium" width="80%"></a>
+                                        <br />
+                            </div>
+                          
+                            <div class="main">
+                              <h2>Lorum Ipsum</h2>
+                              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                            </div>
+                          
+                            <div class="right">
+                              <h2>About</h2>
+                              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                            </div>
+                          </div>
+            <!-- <div style="overflow:auto">
                 <div class="nav">
                     <a href="https://www.terrarium.com.pl" target="_blank" >
                         <img src="https://www.terrarium.com.pl/banner/baner/terrarium/ULOTKA_KAMELEON.jpg" border="0" alt="Terrarystyka terrarium" width="80%"></a>
@@ -35,20 +80,24 @@
                     </h4>
                 </div>
 
-                <div w3-include-html="ads.html"></div>
+                <div class="ad">
+                        reklama dźwignią handlu
+                    </div>
+
+                 <div w3-include-html="ads.html"></div>
                 <script>
                         includeHTML();
                 </script>
                 
-                
-                <div style="clear: both;"></div>
-            </content>
+            </div> -->
+            <!-- </content>
             <div w3-include-html="footer.html"></div>
             <script>
                     includeHTML();
             </script>
             <script>
                 document.getElementsByTagName("zegar").innerHTML = "Godzina:";
-            </script>
-        </div>
+            </script> -->
+        <!-- </div> -->
     </body>
+    </html>

@@ -1,4 +1,19 @@
-#gadya
+@media only screen and (max-width: 900px) {
+    /* For mobile phones: */
+    .gadybox {
+      width: 50%;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    /* For mobile phones: */
+    .gadybox {
+      width: 100%;
+    }
+  }
+
+
+.gadytop
 {
     background-color: aqua;
     width: 98%;
@@ -7,35 +22,17 @@
     padding: 1px;
 }
 
-/* #jaszczurki
+.gadytop ul li
 {
-    background-color: red;
-    float: left;
-    height: 400px;
-    width: 25%;
+    text-align: left;
+}
+
+.gadybox
+{
     text-align: center;
 }
-#weze
+
+.gadybox ul li
 {
-    background-color: green;
-    float: left;
-    height: 400px;
-    width: 25%;
-    text-align: center;
+    text-align: left;
 }
-#zolwie
-{
-    background-color: yellow;
-    float: left;
-    height: 400px;
-    width: 25%;
-    text-align: center;
-}
-#sfenodonty
-{
-    background-color: blue;
-    float: left;
-    height: 400px;
-    width: 25%;
-    text-align: center;
-} */

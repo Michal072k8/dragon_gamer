@@ -1,38 +1,30 @@
-@media only screen and (max-width: 900px) {
-    /* For mobile phones: */
-    .gadybox {
-      width: 50%;
-    }
-  }
-
-  @media only screen and (max-width: 600px) {
-    /* For mobile phones: */
-    .gadybox {
-      width: 100%;
-    }
-  }
-
-
-.gadytop
-{
-    background-color: aqua;
+.gady-top{
     width: 98%;
     margin-bottom: 10px;
     text-align: center;
     padding: 1px;
+    align-self: center;
+    margin: 0 auto;
 }
 
-.gadytop ul li
-{
+.gady-top ul li{
     text-align: left;
 }
 
-.gadybox
-{
+.gady-box{
     text-align: center;
 }
 
-.gadybox ul li
-{
+.gady-box ul li{
     text-align: left;
+}
+
+.gady-menu-item {
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+}
+
+.gady-menu-item a:link {
+    color: rgb(9, 30, 8);
 }

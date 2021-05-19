@@ -85,7 +85,7 @@ margin-left: 3%;
 .nav
 {
     width: 20%;
-    height: 700px;
+    /* height: 700px; */
     color: rgb(38, 179, 38);
     background-color: green;
     padding-top: 15px;

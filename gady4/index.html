@@ -12,27 +12,22 @@
   <link rel="stylesheet" href="./style.css" type="text/css" />
 
   <style>
-        * {
-          box-sizing: border-box;
-        }
-        
-        @media only screen and (max-width: 620px) {
-          /* For mobile phones: */
-          .nav, .ct, .ad {
-            width: 100%;
-          }
-        }
-        </style>
+    @media only screen and (max-width: 620px) {
+      .nav, .ct, .ad {
+        width: 100%;
+      }
+    }
+  </style>
   <script src="myScript.js"></script>
    
   </head>
     <body>
-        <!-- <div id="container"> -->
-            <!-- <div w3-include-html="header.html"></div>
+       <div id="container"> 
+             <div w3-include-html="header.html"></div>
             <script>
                     includeHTML();
             </script>
-            <content> -->
+            <content> 
                     <div style="overflow:auto">
                             <div class="nav">
                                     <a href="https://www.terrarium.com.pl" target="_blank" >
@@ -46,25 +41,20 @@
                     Gdy tylko dowien się czegoś nowego to od razu dodam te informacje w to miejsce gdzie będę chciał żeby była cała moja wiedza.
                     </h4>
                 </div>
-
-                <div class="ad">
-                        reklama dźwignią handlu
-                    </div>
-
-                 <div w3-include-html="ads.html"></div>
+                <div w3-include-html="ads.html"></div>
                 <script>
                         includeHTML();
                 </script>
                 
-            </div> -->
-            <!-- </content>
+            </div>
+             </content>
             <div w3-include-html="footer.html"></div>
             <script>
                     includeHTML();
             </script>
             <script>
                 document.getElementsByTagName("zegar").innerHTML = "Godzina:";
-            </script> -->
-        <!-- </div> -->
+            </script> 
+         </div> 
     </body>
     </html>

@@ -8,42 +8,52 @@
 
   <meta name="description" content="Vanilla terra"/>
   <meta name="keywords" content="gady, gekony, agamy, gekony lamparcie, agamy brodate, Vanilla terra" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css" type="text/css" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-  <link rel="stylesheet" href="style.css" type="text/css" />
+  <style>
+    @media only screen and (max-width: 620px) {
+      .nav, .ct, .ad {
+        width: 100%;
+      }
+    }
+  </style>
   <script src="myScript.js"></script>
    
   </head>
     <body>
-        <div id="container">
-            <div w3-include-html="header.html"></div>
+       <div id="container"> 
+             <div w3-include-html="header.html"></div>
             <script>
                     includeHTML();
             </script>
-            <content>
-                <div class="nav">
-                </div> 
-
-                <div id="ct">
+            <content> 
+                    <div style="overflow:auto">
+                            <div class="nav">
+                                    <a href="https://www.terrarium.com.pl" target="_blank" >
+                                        <img src="https://www.terrarium.com.pl/banner/baner/terrarium/ULOTKA_KAMELEON.jpg" border="0" alt="Terrarystyka terrarium" width="80%"></a>
+                                        <br />
+                            </div>
+                <div class="ct">
                     <h4>
-                        strona w trakcie budowy
+                        Strona w trakcie budowy
                     </h4>
                 </div>
-
                 <div w3-include-html="ads.html"></div>
                 <script>
                         includeHTML();
                 </script>
                 
-                
-                <div style="clear: both;"></div>
-            </content>
+            </div>
+             </content>
             <div w3-include-html="footer.html"></div>
             <script>
                     includeHTML();
             </script>
-            <div id="zegar">kkkkkk </div>
             <script>
                 document.getElementsByTagName("zegar").innerHTML = "Godzina:";
-            </script>
-        </div>
+            </script> 
+         </div> 
     </body>
+    </html>
